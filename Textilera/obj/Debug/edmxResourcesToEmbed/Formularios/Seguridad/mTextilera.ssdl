@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TextileraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="CategoriaId" />
+    </Key>
+    <Property Name="CategoriaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreCategoria" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EstadoCategoria" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleEstilosOperaciones">
+    <Key>
+      <PropertyRef Name="EstiloId" />
+      <PropertyRef Name="OperacionId" />
+    </Key>
+    <Property Name="EstiloId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OperacionId" Type="bigint" Nullable="false" />
+    <Property Name="NumeroOperacion" Type="tinyint" Nullable="false" />
+    <Property Name="SAH" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estilos">
+    <Key>
+      <PropertyRef Name="EstiloId" />
+    </Key>
+    <Property Name="EstiloId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FKCategoriaId" Type="bigint" Nullable="false" />
+    <Property Name="EstadoEstilo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Operaciones">
+    <Key>
+      <PropertyRef Name="OperacionId" />
+    </Key>
+    <Property Name="OperacionId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreOperacion" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="18" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar" MaxLength="18" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+    <Property Name="CorreoElectronico" Type="nvarchar" MaxLength="140" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Contrasenia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EstadoUsuario" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_DetalleEstilosOperaciones_Estilos">
+    <End Role="Estilos" Type="Self.Estilos" Multiplicity="1" />
+    <End Role="DetalleEstilosOperaciones" Type="Self.DetalleEstilosOperaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estilos">
+        <PropertyRef Name="EstiloId" />
+      </Principal>
+      <Dependent Role="DetalleEstilosOperaciones">
+        <PropertyRef Name="EstiloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleEstilosOperaciones_Operaciones1">
+    <End Role="Operaciones" Type="Self.Operaciones" Multiplicity="1" />
+    <End Role="DetalleEstilosOperaciones" Type="Self.DetalleEstilosOperaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operaciones">
+        <PropertyRef Name="OperacionId" />
+      </Principal>
+      <Dependent Role="DetalleEstilosOperaciones">
+        <PropertyRef Name="OperacionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estilos_Categorias">
+    <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
+    <End Role="Estilos" Type="Self.Estilos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="CategoriaId" />
+      </Principal>
+      <Dependent Role="Estilos">
+        <PropertyRef Name="FKCategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TextileraModelStoreContainer">
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetalleEstilosOperaciones" EntityType="Self.DetalleEstilosOperaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estilos" EntityType="Self.Estilos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Operaciones" EntityType="Self.Operaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DetalleEstilosOperaciones_Estilos" Association="Self.FK_DetalleEstilosOperaciones_Estilos">
+      <End Role="Estilos" EntitySet="Estilos" />
+      <End Role="DetalleEstilosOperaciones" EntitySet="DetalleEstilosOperaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleEstilosOperaciones_Operaciones1" Association="Self.FK_DetalleEstilosOperaciones_Operaciones1">
+      <End Role="Operaciones" EntitySet="Operaciones" />
+      <End Role="DetalleEstilosOperaciones" EntitySet="DetalleEstilosOperaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estilos_Categorias" Association="Self.FK_Estilos_Categorias">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Estilos" EntitySet="Estilos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

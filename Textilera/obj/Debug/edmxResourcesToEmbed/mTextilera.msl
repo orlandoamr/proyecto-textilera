@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TextileraModelStoreContainer" CdmEntityContainer="TextileraEntities">
+    <EntitySetMapping Name="Categorias">
+      <EntityTypeMapping TypeName="TextileraModel.Categoria">
+        <MappingFragment StoreEntitySet="Categorias">
+          <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
+          <ScalarProperty Name="NombreCategoria" ColumnName="NombreCategoria" />
+          <ScalarProperty Name="EstadoCategoria" ColumnName="EstadoCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleEstilosOperaciones">
+      <EntityTypeMapping TypeName="TextileraModel.DetalleEstilosOperacione">
+        <MappingFragment StoreEntitySet="DetalleEstilosOperaciones">
+          <ScalarProperty Name="EstiloId" ColumnName="EstiloId" />
+          <ScalarProperty Name="OperacionId" ColumnName="OperacionId" />
+          <ScalarProperty Name="NumeroOperacion" ColumnName="NumeroOperacion" />
+          <ScalarProperty Name="SAH" ColumnName="SAH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estilos">
+      <EntityTypeMapping TypeName="TextileraModel.Estilo">
+        <MappingFragment StoreEntitySet="Estilos">
+          <ScalarProperty Name="EstiloId" ColumnName="EstiloId" />
+          <ScalarProperty Name="FKCategoriaId" ColumnName="FKCategoriaId" />
+          <ScalarProperty Name="EstadoEstilo" ColumnName="EstadoEstilo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Operaciones">
+      <EntityTypeMapping TypeName="TextileraModel.Operacione">
+        <MappingFragment StoreEntitySet="Operaciones">
+          <ScalarProperty Name="OperacionId" ColumnName="OperacionId" />
+          <ScalarProperty Name="NombreOperacion" ColumnName="NombreOperacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="TextileraModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
+          <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+          <ScalarProperty Name="EstadoUsuario" ColumnName="EstadoUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spInsertarUsuario" FunctionName="TextileraModel.Store.spInsertarUsuario" />
+  </EntityContainerMapping>
+</Mapping>

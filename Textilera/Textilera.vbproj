@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BB5F8C0-0D99-4DD9-98C8-2A7E54C6911C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Textilera.My.MyApplication</StartupObject>
+    <RootNamespace>Textilera</RootNamespace>
+    <AssemblyName>Textilera</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Textilera.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Textilera.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\Categorias.vb" />
+    <Compile Include="Clases\clsSeguridad.vb" />
+    <Compile Include="Formularios\Balanceos\frmBalanceos.Designer.vb">
+      <DependentUpon>frmBalanceos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Balanceos\frmBalanceos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Categorias\frmBuscarCategorias.Designer.vb">
+      <DependentUpon>frmBuscarCategorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Categorias\frmBuscarCategorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Categorias\frmCategorias.Designer.vb">
+      <DependentUpon>frmCategorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Categorias\frmCategorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estilos\frmBuscarEstilo.Designer.vb">
+      <DependentUpon>frmBuscarEstilo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estilos\frmBuscarEstilo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estilos\frmEstilos.Designer.vb">
+      <DependentUpon>frmEstilos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estilos\frmEstilos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estilos\frmOperacionesEstilos.Designer.vb">
+      <DependentUpon>frmOperacionesEstilos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estilos\frmOperacionesEstilos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Maquinas\frmMaquinas.Designer.vb">
+      <DependentUpon>frmMaquinas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Maquinas\frmMaquinas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Operaciones\frmOperaciones.Designer.vb">
+      <DependentUpon>frmOperaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Operaciones\frmOperaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\frmUsuarios.Designer.vb">
+      <DependentUpon>frmUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\frmUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicio.Designer.vb">
+      <DependentUpon>frmInicio.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelos\BalanceosEstilos.vb">
+      <DependentUpon>mTextilera.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Categorias.vb">
+      <DependentUpon>mTextilera.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\DetalleEstilosOperaciones.vb">
+      <DependentUpon>mTextilera.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Estilos.vb">
+      <DependentUpon>mTextilera.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Maquinas.vb">
+      <DependentUpon>mTextilera.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\mTextilera.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mTextilera.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\mTextilera.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mTextilera.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\mTextilera.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mTextilera.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Operaciones.vb">
+      <DependentUpon>mTextilera.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\OperacionesBalanceos.vb">
+      <DependentUpon>mTextilera.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sysdiagrams.vb">
+      <DependentUpon>mTextilera.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Usuarios.vb">
+      <DependentUpon>mTextilera.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\FuncionesGlobales.vb" />
+    <Compile Include="Modulos\mdlCategorias.vb" />
+    <Compile Include="Modulos\mdlEstilos.vb" />
+    <Compile Include="Modulos\mdlMaquinas.vb" />
+    <Compile Include="Modulos\mdlOperaciones.vb" />
+    <Compile Include="Modulos\Mensajes.vb" />
+    <Compile Include="Modulos\mdlUsuarios.vb" />
+    <Compile Include="Modulos\Seguridad.vb" />
+    <Compile Include="Modulos\Validaciones.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\clsUsuarios.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Formularios\Balanceos\frmBalanceos.resx">
+      <DependentUpon>frmBalanceos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Categorias\frmBuscarCategorias.resx">
+      <DependentUpon>frmBuscarCategorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Categorias\frmCategorias.resx">
+      <DependentUpon>frmCategorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estilos\frmBuscarEstilo.resx">
+      <DependentUpon>frmBuscarEstilo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estilos\frmEstilos.resx">
+      <DependentUpon>frmEstilos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estilos\frmOperacionesEstilos.resx">
+      <DependentUpon>frmOperacionesEstilos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Maquinas\frmMaquinas.resx">
+      <DependentUpon>frmMaquinas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Operaciones\frmOperaciones.resx">
+      <DependentUpon>frmOperaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicio.resx">
+      <DependentUpon>frmInicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Modelos\mTextilera.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>mTextilera.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modelos\mTextilera.edmx.diagram">
+      <DependentUpon>mTextilera.edmx</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Modelos\mTextilera.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>mTextilera.edmx</DependentUpon>
+      <LastGenOutput>mTextilera.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="Modelos\mTextilera.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>mTextilera.edmx</DependentUpon>
+      <LastGenOutput>mTextilera.vb</LastGenOutput>
+    </Content>
+    <None Include="Resources\Balance Symbol icon.png" />
+    <None Include="Resources\Sewing Machine icon.png" />
+    <None Include="Resources\T-Shirt icon2.png" />
+    <None Include="Resources\T-Shirt icon1.png" />
+    <None Include="Resources\T-Shirt icon.png" />
+    <None Include="Resources\Group.png" />
+    <None Include="Resources\outline_minimize_white_24dp1.png" />
+    <None Include="Resources\outline_minimize_white_24dp.png" />
+    <None Include="Resources\outline_close_white_24dp1.png" />
+    <None Include="Resources\outline_close_white_24dp.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

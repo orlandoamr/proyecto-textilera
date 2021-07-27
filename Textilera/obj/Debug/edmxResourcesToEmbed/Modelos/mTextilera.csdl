@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TextileraModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="CategoriaId" />
+    </Key>
+    <Property Name="CategoriaId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreCategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EstadoCategoria" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Estilos" Relationship="Self.FK_Estilos_Categorias" FromRole="Categorias" ToRole="Estilos" />
+    <Property Name="DescripcionCategoria" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DetalleEstilosOperaciones">
+    <Key>
+      <PropertyRef Name="EstiloId" />
+      <PropertyRef Name="OperacionId" />
+    </Key>
+    <Property Name="EstiloId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OperacionId" Type="Int64" Nullable="false" />
+    <Property Name="NumeroOperacion" Type="Byte" Nullable="false" />
+    <Property Name="SAH" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Estilos" Relationship="Self.FK_DetalleEstilosOperaciones_Estilos" FromRole="DetalleEstilosOperaciones" ToRole="Estilos" />
+    <NavigationProperty Name="Operaciones" Relationship="Self.FK_DetalleEstilosOperaciones_Operaciones1" FromRole="DetalleEstilosOperaciones" ToRole="Operaciones" />
+  </EntityType>
+  <EntityType Name="Estilos">
+    <Key>
+      <PropertyRef Name="EstiloId" />
+    </Key>
+    <Property Name="EstiloId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FKCategoriaId" Type="Int64" Nullable="false" />
+    <Property Name="EstadoEstilo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Categorias" Relationship="Self.FK_Estilos_Categorias" FromRole="Estilos" ToRole="Categorias" />
+    <NavigationProperty Name="DetalleEstilosOperaciones" Relationship="Self.FK_DetalleEstilosOperaciones_Estilos" FromRole="Estilos" ToRole="DetalleEstilosOperaciones" />
+    <Property Name="DescripcionEstilo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BalanceosEstilos" Relationship="TextileraModel.FK_BalanceosEstilos_Estilos" FromRole="Estilos" ToRole="BalanceosEstilos" />
+  </EntityType>
+  <EntityType Name="Operaciones">
+    <Key>
+      <PropertyRef Name="OperacionId" />
+    </Key>
+    <Property Name="OperacionId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreOperacion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="DetalleEstilosOperaciones" Relationship="Self.FK_DetalleEstilosOperaciones_Operaciones1" FromRole="Operaciones" ToRole="DetalleEstilosOperaciones" />
+    <Property Name="FKMaquinaId" Type="Int64" Nullable="false" />
+    <Property Name="EstadoOperacion" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="OperacionesBalanceos" Relationship="TextileraModel.FK_OperacionesBalanceos_Operaciones1" FromRole="Operaciones" ToRole="OperacionesBalanceos" />
+    <NavigationProperty Name="Maquinas" Relationship="TextileraModel.FK_Operaciones_Maquinas" FromRole="Operaciones" ToRole="Maquinas" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="UsuarioId" />
+    </Key>
+    <Property Name="UsuarioId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="18" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="18" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CorreoElectronico" Type="String" MaxLength="140" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Contrasenia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EstadoUsuario" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Estilos_Categorias">
+    <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
+    <End Role="Estilos" Type="Self.Estilos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="CategoriaId" />
+      </Principal>
+      <Dependent Role="Estilos">
+        <PropertyRef Name="FKCategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleEstilosOperaciones_Estilos">
+    <End Role="Estilos" Type="Self.Estilos" Multiplicity="1" />
+    <End Role="DetalleEstilosOperaciones" Type="Self.DetalleEstilosOperaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estilos">
+        <PropertyRef Name="EstiloId" />
+      </Principal>
+      <Dependent Role="DetalleEstilosOperaciones">
+        <PropertyRef Name="EstiloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleEstilosOperaciones_Operaciones1">
+    <End Role="Operaciones" Type="Self.Operaciones" Multiplicity="1" />
+    <End Role="DetalleEstilosOperaciones" Type="Self.DetalleEstilosOperaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operaciones">
+        <PropertyRef Name="OperacionId" />
+      </Principal>
+      <Dependent Role="DetalleEstilosOperaciones">
+        <PropertyRef Name="OperacionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TextileraEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" />
+    <EntitySet Name="DetalleEstilosOperaciones" EntityType="Self.DetalleEstilosOperaciones" />
+    <EntitySet Name="Estilos" EntityType="Self.Estilos" />
+    <EntitySet Name="Operaciones" EntityType="Self.Operaciones" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <AssociationSet Name="FK_Estilos_Categorias" Association="Self.FK_Estilos_Categorias">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Estilos" EntitySet="Estilos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleEstilosOperaciones_Estilos" Association="Self.FK_DetalleEstilosOperaciones_Estilos">
+      <End Role="Estilos" EntitySet="Estilos" />
+      <End Role="DetalleEstilosOperaciones" EntitySet="DetalleEstilosOperaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleEstilosOperaciones_Operaciones1" Association="Self.FK_DetalleEstilosOperaciones_Operaciones1">
+      <End Role="Operaciones" EntitySet="Operaciones" />
+      <End Role="DetalleEstilosOperaciones" EntitySet="DetalleEstilosOperaciones" />
+    </AssociationSet>
+    <FunctionImport Name="spInsertarUsuario">
+      <Parameter Name="nom" Mode="In" Type="String" />
+      <Parameter Name="ape" Mode="In" Type="String" />
+      <Parameter Name="fna" Mode="In" Type="DateTime" />
+      <Parameter Name="ce" Mode="In" Type="String" />
+      <Parameter Name="usu" Mode="In" Type="String" />
+      <Parameter Name="con" Mode="In" Type="String" />
+      <Parameter Name="est" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="spInsertarCategoria">
+      <Parameter Name="NombreCategoria" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="spInsertarEstilo">
+      <Parameter Name="EstiloId" Mode="In" Type="String" />
+      <Parameter Name="FKCategoriaId" Mode="In" Type="Int64" />
+      <Parameter Name="Estado" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="BalanceosEstilos" EntityType="TextileraModel.BalanceosEstilos" />
+    <EntitySet Name="Maquinas" EntityType="TextileraModel.Maquinas" />
+    <EntitySet Name="OperacionesBalanceos" EntityType="TextileraModel.OperacionesBalanceos" />
+    <AssociationSet Name="FK_BalanceosEstilos_Estilos" Association="TextileraModel.FK_BalanceosEstilos_Estilos">
+      <End Role="Estilos" EntitySet="Estilos" />
+      <End Role="BalanceosEstilos" EntitySet="BalanceosEstilos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OperacionesBalanceos_BalanceosEstilos" Association="TextileraModel.FK_OperacionesBalanceos_BalanceosEstilos">
+      <End Role="BalanceosEstilos" EntitySet="BalanceosEstilos" />
+      <End Role="OperacionesBalanceos" EntitySet="OperacionesBalanceos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OperacionesBalanceos_Operaciones1" Association="TextileraModel.FK_OperacionesBalanceos_Operaciones1">
+      <End Role="Operaciones" EntitySet="Operaciones" />
+      <End Role="OperacionesBalanceos" EntitySet="OperacionesBalanceos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Operaciones_Maquinas" Association="TextileraModel.FK_Operaciones_Maquinas">
+      <End Role="Maquinas" EntitySet="Maquinas" />
+      <End Role="Operaciones" EntitySet="Operaciones" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BalanceosEstilos">
+    <Key>
+      <PropertyRef Name="BalanceoEstiloId" />
+    </Key>
+    <Property Name="BalanceoEstiloId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="C_UtilizacionRequeridoEquipo" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CantidadOperadores" Type="Byte" Nullable="false" />
+    <Property Name="MetaDocenasHora" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MetaDocenaDias" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MetaDocenasSemana" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="FKEstiloId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EstadoBalanceo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Estilos" Relationship="TextileraModel.FK_BalanceosEstilos_Estilos" FromRole="BalanceosEstilos" ToRole="Estilos" />
+    <NavigationProperty Name="OperacionesBalanceos" Relationship="TextileraModel.FK_OperacionesBalanceos_BalanceosEstilos" FromRole="BalanceosEstilos" ToRole="OperacionesBalanceos" />
+  </EntityType>
+  <EntityType Name="Maquinas">
+    <Key>
+      <PropertyRef Name="MaquinaId" />
+    </Key>
+    <Property Name="MaquinaId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreMaquina" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Estandar" Type="Int32" />
+    <Property Name="EstadoMaquina" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Operaciones" Relationship="TextileraModel.FK_Operaciones_Maquinas" FromRole="Maquinas" ToRole="Operaciones" />
+  </EntityType>
+  <EntityType Name="OperacionesBalanceos">
+    <Key>
+      <PropertyRef Name="OperacionBalanceoId" />
+    </Key>
+    <Property Name="OperacionBalanceoId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TiempoEstandarSegundos" Type="Double" Nullable="false" />
+    <Property Name="TiempoEstandarMinutos" Type="Double" Nullable="false" />
+    <Property Name="MetaDocenasOperador" Type="Double" Nullable="false" />
+    <Property Name="CantidadOperadores" Type="Double" Nullable="false" />
+    <Property Name="C_UtilizacionOperador" Type="Byte" Nullable="false" />
+    <Property Name="ParejaBalanceo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FKBalanceoId" Type="Int64" Nullable="false" />
+    <Property Name="FKOperacionId" Type="Int64" />
+    <NavigationProperty Name="BalanceosEstilos" Relationship="TextileraModel.FK_OperacionesBalanceos_BalanceosEstilos" FromRole="OperacionesBalanceos" ToRole="BalanceosEstilos" />
+    <NavigationProperty Name="Operaciones" Relationship="TextileraModel.FK_OperacionesBalanceos_Operaciones1" FromRole="OperacionesBalanceos" ToRole="Operaciones" />
+  </EntityType>
+  <Association Name="FK_BalanceosEstilos_Estilos">
+    <End Type="TextileraModel.Estilos" Role="Estilos" Multiplicity="1" />
+    <End Type="TextileraModel.BalanceosEstilos" Role="BalanceosEstilos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estilos">
+        <PropertyRef Name="EstiloId" />
+      </Principal>
+      <Dependent Role="BalanceosEstilos">
+        <PropertyRef Name="FKEstiloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OperacionesBalanceos_BalanceosEstilos">
+    <End Type="TextileraModel.BalanceosEstilos" Role="BalanceosEstilos" Multiplicity="1" />
+    <End Type="TextileraModel.OperacionesBalanceos" Role="OperacionesBalanceos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BalanceosEstilos">
+        <PropertyRef Name="BalanceoEstiloId" />
+      </Principal>
+      <Dependent Role="OperacionesBalanceos">
+        <PropertyRef Name="FKBalanceoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OperacionesBalanceos_Operaciones1">
+    <End Type="TextileraModel.Operaciones" Role="Operaciones" Multiplicity="0..1" />
+    <End Type="TextileraModel.OperacionesBalanceos" Role="OperacionesBalanceos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operaciones">
+        <PropertyRef Name="OperacionId" />
+      </Principal>
+      <Dependent Role="OperacionesBalanceos">
+        <PropertyRef Name="FKOperacionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Operaciones_Maquinas">
+    <End Type="TextileraModel.Maquinas" Role="Maquinas" Multiplicity="1" />
+    <End Type="TextileraModel.Operaciones" Role="Operaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Maquinas">
+        <PropertyRef Name="MaquinaId" />
+      </Principal>
+      <Dependent Role="Operaciones">
+        <PropertyRef Name="FKMaquinaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TextileraModelStoreContainer" CdmEntityContainer="TextileraEntities">
+    <EntitySetMapping Name="Categorias">
+      <EntityTypeMapping TypeName="TextileraModel.Categorias">
+        <MappingFragment StoreEntitySet="Categorias">
+          <ScalarProperty Name="DescripcionCategoria" ColumnName="DescripcionCategoria" />
+          <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
+          <ScalarProperty Name="NombreCategoria" ColumnName="NombreCategoria" />
+          <ScalarProperty Name="EstadoCategoria" ColumnName="EstadoCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleEstilosOperaciones">
+      <EntityTypeMapping TypeName="TextileraModel.DetalleEstilosOperaciones">
+        <MappingFragment StoreEntitySet="DetalleEstilosOperaciones">
+          <ScalarProperty Name="EstiloId" ColumnName="EstiloId" />
+          <ScalarProperty Name="OperacionId" ColumnName="OperacionId" />
+          <ScalarProperty Name="NumeroOperacion" ColumnName="NumeroOperacion" />
+          <ScalarProperty Name="SAH" ColumnName="SAH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estilos">
+      <EntityTypeMapping TypeName="TextileraModel.Estilos">
+        <MappingFragment StoreEntitySet="Estilos">
+          <ScalarProperty Name="DescripcionEstilo" ColumnName="DescripcionEstilo" />
+          <ScalarProperty Name="EstiloId" ColumnName="EstiloId" />
+          <ScalarProperty Name="FKCategoriaId" ColumnName="FKCategoriaId" />
+          <ScalarProperty Name="EstadoEstilo" ColumnName="EstadoEstilo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Operaciones">
+      <EntityTypeMapping TypeName="TextileraModel.Operaciones">
+        <MappingFragment StoreEntitySet="Operaciones">
+          <ScalarProperty Name="EstadoOperacion" ColumnName="EstadoOperacion" />
+          <ScalarProperty Name="FKMaquinaId" ColumnName="FKMaquinaId" />
+          <ScalarProperty Name="OperacionId" ColumnName="OperacionId" />
+          <ScalarProperty Name="NombreOperacion" ColumnName="NombreOperacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TextileraModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="TextileraModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+          <ScalarProperty Name="EstadoUsuario" ColumnName="EstadoUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spInsertarUsuario" FunctionName="TextileraModel.Store.spInsertarUsuario" />
+    <FunctionImportMapping FunctionImportName="spInsertarCategoria" FunctionName="TextileraModel.Store.spInsertarCategoria" />
+    <FunctionImportMapping FunctionImportName="spInsertarEstilo" FunctionName="TextileraModel.Store.spInsertarEstilo" />
+    <EntitySetMapping Name="BalanceosEstilos">
+      <EntityTypeMapping TypeName="TextileraModel.BalanceosEstilos">
+        <MappingFragment StoreEntitySet="BalanceosEstilos">
+          <ScalarProperty Name="EstadoBalanceo" ColumnName="EstadoBalanceo" />
+          <ScalarProperty Name="FKEstiloId" ColumnName="FKEstiloId" />
+          <ScalarProperty Name="MetaDocenasSemana" ColumnName="MetaDocenasSemana" />
+          <ScalarProperty Name="MetaDocenaDias" ColumnName="MetaDocenaDias" />
+          <ScalarProperty Name="MetaDocenasHora" ColumnName="MetaDocenasHora" />
+          <ScalarProperty Name="CantidadOperadores" ColumnName="CantidadOperadores" />
+          <ScalarProperty Name="C_UtilizacionRequeridoEquipo" ColumnName="%UtilizacionRequeridoEquipo" />
+          <ScalarProperty Name="BalanceoEstiloId" ColumnName="BalanceoEstiloId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maquinas">
+      <EntityTypeMapping TypeName="TextileraModel.Maquinas">
+        <MappingFragment StoreEntitySet="Maquinas">
+          <ScalarProperty Name="EstadoMaquina" ColumnName="EstadoMaquina" />
+          <ScalarProperty Name="Estandar" ColumnName="Estandar" />
+          <ScalarProperty Name="NombreMaquina" ColumnName="NombreMaquina" />
+          <ScalarProperty Name="MaquinaId" ColumnName="MaquinaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperacionesBalanceos">
+      <EntityTypeMapping TypeName="TextileraModel.OperacionesBalanceos">
+        <MappingFragment StoreEntitySet="OperacionesBalanceos">
+          <ScalarProperty Name="FKOperacionId" ColumnName="FKOperacionId" />
+          <ScalarProperty Name="FKBalanceoId" ColumnName="FKBalanceoId" />
+          <ScalarProperty Name="ParejaBalanceo" ColumnName="ParejaBalanceo" />
+          <ScalarProperty Name="C_UtilizacionOperador" ColumnName="%UtilizacionOperador" />
+          <ScalarProperty Name="CantidadOperadores" ColumnName="CantidadOperadores" />
+          <ScalarProperty Name="MetaDocenasOperador" ColumnName="MetaDocenasOperador" />
+          <ScalarProperty Name="TiempoEstandarMinutos" ColumnName="TiempoEstandarMinutos" />
+          <ScalarProperty Name="TiempoEstandarSegundos" ColumnName="TiempoEstandarSegundos" />
+          <ScalarProperty Name="OperacionBalanceoId" ColumnName="OperacionBalanceoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
