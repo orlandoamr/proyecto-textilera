@@ -42,6 +42,11 @@ Partial Class frmCategorias
         '
         'dgvCategorias
         '
+        Me.dgvCategorias.AllowUserToAddRows = False
+        Me.dgvCategorias.AllowUserToResizeColumns = False
+        Me.dgvCategorias.AllowUserToResizeRows = False
+        Me.dgvCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvCategorias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvCategorias.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvCategorias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -66,7 +71,7 @@ Partial Class frmCategorias
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvCategorias.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvCategorias.RowHeadersWidth = 51
+        Me.dgvCategorias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
@@ -74,7 +79,7 @@ Partial Class frmCategorias
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgvCategorias.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvCategorias.RowTemplate.Height = 24
-        Me.dgvCategorias.Size = New System.Drawing.Size(866, 653)
+        Me.dgvCategorias.Size = New System.Drawing.Size(734, 621)
         Me.dgvCategorias.TabIndex = 0
         '
         'chkEstado
@@ -82,10 +87,10 @@ Partial Class frmCategorias
         Me.chkEstado.AutoSize = True
         Me.chkEstado.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkEstado.ForeColor = System.Drawing.Color.Black
-        Me.chkEstado.Location = New System.Drawing.Point(924, 469)
+        Me.chkEstado.Location = New System.Drawing.Point(789, 400)
         Me.chkEstado.Margin = New System.Windows.Forms.Padding(4)
         Me.chkEstado.Name = "chkEstado"
-        Me.chkEstado.Size = New System.Drawing.Size(125, 26)
+        Me.chkEstado.Size = New System.Drawing.Size(102, 24)
         Me.chkEstado.TabIndex = 30
         Me.chkEstado.Text = "Habilitado"
         Me.chkEstado.UseVisualStyleBackColor = True
@@ -95,10 +100,10 @@ Partial Class frmCategorias
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(919, 443)
+        Me.Label6.Location = New System.Drawing.Point(784, 374)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(72, 22)
+        Me.Label6.Size = New System.Drawing.Size(58, 20)
         Me.Label6.TabIndex = 29
         Me.Label6.Text = "Estado"
         '
@@ -109,7 +114,7 @@ Partial Class frmCategorias
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardar.ForeColor = System.Drawing.Color.AliceBlue
-        Me.btnGuardar.Location = New System.Drawing.Point(924, 575)
+        Me.btnGuardar.Location = New System.Drawing.Point(792, 475)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(363, 59)
@@ -121,11 +126,11 @@ Partial Class frmCategorias
         '
         Me.txtCategoria.AccessibleName = "nombre de la categoría"
         Me.txtCategoria.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCategoria.Location = New System.Drawing.Point(922, 175)
+        Me.txtCategoria.Location = New System.Drawing.Point(790, 156)
         Me.txtCategoria.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCategoria.MaxLength = 15
         Me.txtCategoria.Name = "txtCategoria"
-        Me.txtCategoria.Size = New System.Drawing.Size(365, 30)
+        Me.txtCategoria.Size = New System.Drawing.Size(365, 25)
         Me.txtCategoria.TabIndex = 27
         '
         'Label3
@@ -133,10 +138,10 @@ Partial Class frmCategorias
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(919, 151)
+        Me.Label3.Location = New System.Drawing.Point(787, 132)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(231, 22)
+        Me.Label3.Size = New System.Drawing.Size(186, 20)
         Me.Label3.TabIndex = 26
         Me.Label3.Text = "Nombre de la categoría"
         '
@@ -144,11 +149,11 @@ Partial Class frmCategorias
         '
         Me.txtCodigo.Enabled = False
         Me.txtCodigo.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(922, 66)
+        Me.txtCodigo.Location = New System.Drawing.Point(789, 74)
         Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCodigo.MaxLength = 15
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(365, 30)
+        Me.txtCodigo.Size = New System.Drawing.Size(365, 25)
         Me.txtCodigo.TabIndex = 25
         '
         'lbCodigo
@@ -156,10 +161,10 @@ Partial Class frmCategorias
         Me.lbCodigo.AutoSize = True
         Me.lbCodigo.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbCodigo.ForeColor = System.Drawing.Color.Black
-        Me.lbCodigo.Location = New System.Drawing.Point(919, 40)
+        Me.lbCodigo.Location = New System.Drawing.Point(786, 48)
         Me.lbCodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbCodigo.Name = "lbCodigo"
-        Me.lbCodigo.Size = New System.Drawing.Size(78, 22)
+        Me.lbCodigo.Size = New System.Drawing.Size(64, 20)
         Me.lbCodigo.TabIndex = 24
         Me.lbCodigo.Text = "Código"
         '
@@ -170,7 +175,7 @@ Partial Class frmCategorias
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNuevo.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNuevo.ForeColor = System.Drawing.Color.AliceBlue
-        Me.btnNuevo.Location = New System.Drawing.Point(924, 642)
+        Me.btnNuevo.Location = New System.Drawing.Point(792, 542)
         Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(363, 59)
@@ -184,10 +189,10 @@ Partial Class frmCategorias
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(15, 16)
+        Me.Label1.Location = New System.Drawing.Point(176, 23)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(486, 23)
+        Me.Label1.Size = New System.Drawing.Size(381, 21)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Haga doble click sobre un registro para copiarlo"
         '
@@ -195,7 +200,7 @@ Partial Class frmCategorias
         '
         Me.txtDescripcion.AccessibleName = "descripción"
         Me.txtDescripcion.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescripcion.Location = New System.Drawing.Point(922, 279)
+        Me.txtDescripcion.Location = New System.Drawing.Point(789, 239)
         Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDescripcion.MaxLength = 140
         Me.txtDescripcion.Multiline = True
@@ -208,19 +213,19 @@ Partial Class frmCategorias
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(919, 255)
+        Me.Label2.Location = New System.Drawing.Point(786, 215)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(116, 22)
+        Me.Label2.Size = New System.Drawing.Size(96, 20)
         Me.Label2.TabIndex = 33
         Me.Label2.Text = "Descripción"
         '
         'frmCategorias
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1312, 723)
+        Me.ClientSize = New System.Drawing.Size(1222, 694)
         Me.Controls.Add(Me.txtDescripcion)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -235,6 +240,7 @@ Partial Class frmCategorias
         Me.Controls.Add(Me.dgvCategorias)
         Me.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.Black
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmCategorias"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

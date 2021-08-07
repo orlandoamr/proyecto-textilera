@@ -32,6 +32,11 @@ Textilera
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Textilera.My.Resources.Resources.icons8_home">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Textilera.My.Resources.Resources.outline_close_white_24dp">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -48,6 +53,11 @@ Textilera
 </summary>
 </member>
 <member name="P:Textilera.My.Resources.Resources.outline_minimize_white_24dp1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Textilera.My.Resources.Resources.Picture1">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

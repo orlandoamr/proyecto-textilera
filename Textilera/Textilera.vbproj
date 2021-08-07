@@ -142,6 +142,12 @@
     <Compile Include="Formularios\Seguridad\frmUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmHome.Designer.vb">
+      <DependentUpon>frmHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmInicio.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     <EmbeddedResource Include="Formularios\Seguridad\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.vb</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +303,8 @@
       <DependentUpon>mTextilera.edmx</DependentUpon>
       <LastGenOutput>mTextilera.vb</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8_home.png" />
+    <None Include="Resources\Picture1.png" />
     <None Include="Resources\Balance Symbol icon.png" />
     <None Include="Resources\Sewing Machine icon.png" />
     <None Include="Resources\T-Shirt icon2.png" />

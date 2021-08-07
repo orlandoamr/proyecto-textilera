@@ -35,11 +35,10 @@ Partial Class frmLogin
         '
         Me.txtUsuario.AccessibleName = "usuario"
         Me.txtUsuario.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(71, 253)
-        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtUsuario.Location = New System.Drawing.Point(53, 206)
         Me.txtUsuario.MaxLength = 15
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(362, 30)
+        Me.txtUsuario.Size = New System.Drawing.Size(272, 25)
         Me.txtUsuario.TabIndex = 27
         '
         'lbCodigo
@@ -47,10 +46,9 @@ Partial Class frmLogin
         Me.lbCodigo.AutoSize = True
         Me.lbCodigo.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbCodigo.ForeColor = System.Drawing.Color.Black
-        Me.lbCodigo.Location = New System.Drawing.Point(68, 227)
-        Me.lbCodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbCodigo.Location = New System.Drawing.Point(51, 184)
         Me.lbCodigo.Name = "lbCodigo"
-        Me.lbCodigo.Size = New System.Drawing.Size(75, 22)
+        Me.lbCodigo.Size = New System.Drawing.Size(63, 20)
         Me.lbCodigo.TabIndex = 26
         Me.lbCodigo.Text = "Usuario"
         '
@@ -61,10 +59,9 @@ Partial Class frmLogin
         Me.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnIniciar.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIniciar.ForeColor = System.Drawing.Color.AliceBlue
-        Me.btnIniciar.Location = New System.Drawing.Point(70, 453)
-        Me.btnIniciar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnIniciar.Location = New System.Drawing.Point(55, 367)
         Me.btnIniciar.Name = "btnIniciar"
-        Me.btnIniciar.Size = New System.Drawing.Size(363, 59)
+        Me.btnIniciar.Size = New System.Drawing.Size(272, 48)
         Me.btnIniciar.TabIndex = 29
         Me.btnIniciar.Text = "Iniciar"
         Me.btnIniciar.UseVisualStyleBackColor = False
@@ -73,11 +70,10 @@ Partial Class frmLogin
         '
         Me.txtContrasenia.AccessibleName = "contraseña"
         Me.txtContrasenia.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContrasenia.Location = New System.Drawing.Point(72, 357)
-        Me.txtContrasenia.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtContrasenia.Location = New System.Drawing.Point(54, 290)
         Me.txtContrasenia.MaxLength = 15
         Me.txtContrasenia.Name = "txtContrasenia"
-        Me.txtContrasenia.Size = New System.Drawing.Size(361, 30)
+        Me.txtContrasenia.Size = New System.Drawing.Size(272, 25)
         Me.txtContrasenia.TabIndex = 31
         Me.txtContrasenia.UseSystemPasswordChar = True
         '
@@ -86,33 +82,34 @@ Partial Class frmLogin
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(66, 331)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(50, 269)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(119, 22)
+        Me.Label1.Size = New System.Drawing.Size(95, 20)
         Me.Label1.TabIndex = 30
         Me.Label1.Text = "Contraseña"
         '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.PictureBox1.Location = New System.Drawing.Point(93, 36)
+        Me.PictureBox1.Location = New System.Drawing.Point(70, 29)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(328, 159)
+        Me.PictureBox1.Size = New System.Drawing.Size(246, 129)
         Me.PictureBox1.TabIndex = 32
         Me.PictureBox1.TabStop = False
         '
         'frmLogin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(501, 552)
+        Me.ClientSize = New System.Drawing.Size(376, 448)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.txtContrasenia)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnIniciar)
         Me.Controls.Add(Me.txtUsuario)
         Me.Controls.Add(Me.lbCodigo)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmLogin"
