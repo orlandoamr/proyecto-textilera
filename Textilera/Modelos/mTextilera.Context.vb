@@ -34,6 +34,7 @@ Partial Public Class TextileraEntities
     Public Property BalanceosEstilos() As DbSet(Of BalanceosEstilos)
     Public Property Maquinas() As DbSet(Of Maquinas)
     Public Property OperacionesBalanceos() As DbSet(Of OperacionesBalanceos)
+    Public Property Roles() As DbSet(Of Roles)
 
     Public Overridable Function spInsertarUsuario(nom As String, ape As String, fna As Nullable(Of Date), ce As String, usu As String, con As String, est As Nullable(Of Boolean)) As Integer
         Dim nomParameter As ObjectParameter = If(nom IsNot Nothing, New ObjectParameter("nom", nom), New ObjectParameter("nom", GetType(String)))
@@ -69,6 +70,12 @@ Partial Public Class TextileraEntities
         Dim estadoParameter As ObjectParameter = If(estado.HasValue, New ObjectParameter("Estado", estado), New ObjectParameter("Estado", GetType(Boolean)))
 
         Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("spInsertarEstilo", estiloIdParameter, fKCategoriaIdParameter, estadoParameter)
+    End Function
+
+    Public Overridable Function eliminarDetalle(estiloId As String) As Integer
+        Dim estiloIdParameter As ObjectParameter = If(estiloId IsNot Nothing, New ObjectParameter("EstiloId", estiloId), New ObjectParameter("EstiloId", GetType(String)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("eliminarDetalle", estiloIdParameter)
     End Function
 
 End Class

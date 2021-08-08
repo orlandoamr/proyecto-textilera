@@ -191,6 +191,9 @@
     <Compile Include="Modelos\OperacionesBalanceos.vb">
       <DependentUpon>mTextilera.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Roles.vb">
+      <DependentUpon>mTextilera.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\sysdiagrams.vb">
       <DependentUpon>mTextilera.tt</DependentUpon>
     </Compile>
@@ -198,8 +201,10 @@
       <DependentUpon>mTextilera.tt</DependentUpon>
     </Compile>
     <Compile Include="Modulos\FuncionesGlobales.vb" />
+    <Compile Include="Modulos\mdlBalanceos.vb" />
     <Compile Include="Modulos\mdlCategorias.vb" />
     <Compile Include="Modulos\mdlEstilos.vb" />
+    <Compile Include="Modulos\mdlFunciones.vb" />
     <Compile Include="Modulos\mdlMaquinas.vb" />
     <Compile Include="Modulos\mdlOperaciones.vb" />
     <Compile Include="Modulos\Mensajes.vb" />
@@ -303,6 +308,13 @@
       <DependentUpon>mTextilera.edmx</DependentUpon>
       <LastGenOutput>mTextilera.vb</LastGenOutput>
     </Content>
+    <None Include="Resources\Minus icon.png" />
+    <None Include="Resources\icons8_plus_1.png" />
+    <None Include="Resources\Delete icon.png" />
+    <None Include="Resources\Search icon.png" />
+    <None Include="Resources\Plus icon.png" />
+    <None Include="Resources\Save icon.png" />
+    <None Include="Resources\Delete Bin icon.png" />
     <None Include="Resources\icons8_home.png" />
     <None Include="Resources\Picture1.png" />
     <None Include="Resources\Balance Symbol icon.png" />

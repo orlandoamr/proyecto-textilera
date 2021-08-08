@@ -29,7 +29,6 @@ C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\Programación de Negocios\Textile
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\Programación de Negocios\Textilera\Textilera\bin\Debug\Textilera.xml
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\Programación de Negocios\Textilera\Textilera\bin\Debug\EntityFramework.dll
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\Programación de Negocios\Textilera\Textilera\bin\Debug\EntityFramework.xml
-C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\Programación de Negocios\Textilera\Textilera\obj\Debug\Textilera.vbproj.AssemblyReference.cache
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\Programación de Negocios\Textilera\Textilera\obj\Debug\Textilera.frmBalanceos.resources
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\Programación de Negocios\Textilera\Textilera\obj\Debug\Textilera.frmBuscarCategorias.resources
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\Programación de Negocios\Textilera\Textilera\obj\Debug\Textilera.frmCategorias.resources
@@ -49,3 +48,4 @@ C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\Programación de Negocios\Textile
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\Programación de Negocios\Textilera\Textilera\obj\Debug\Textilera.xml
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\Programación de Negocios\Textilera\Textilera\obj\Debug\Textilera.pdb
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\Programación de Negocios\Textilera\Textilera\obj\Debug\Textilera.frmHome.resources
+C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\Programación de Negocios\Textilera\Textilera\obj\Debug\Textilera.vbproj.AssemblyReference.cache

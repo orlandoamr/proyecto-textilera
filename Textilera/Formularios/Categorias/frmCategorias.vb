@@ -10,10 +10,10 @@
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         Dim textBoxes As New List(Of TextBox) From {txtCategoria, txtDescripcion}
-        Dim val = validarCamposVacios(textBoxes)
+        Dim validacion = validarCamposVacios(textBoxes)
 
-        If Not val("estado") = "ok" Then
-            MsgCampoVacio(val("campo"))
+        If Not validacion(0) Then
+            MsgCampoVacio(validacion(1))
 
         ElseIf editar = True Then
             Dim tCat = db.Categorias.FirstOrDefault(Function(x) x.CategoriaId = txtCodigo.Text)
@@ -61,5 +61,9 @@
         txtDescripcion.Clear()
         chkEstado.Checked = False
         editar = False
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
 End Class

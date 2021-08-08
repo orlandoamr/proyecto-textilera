@@ -6,6 +6,7 @@
 
     Private Sub dgvEstilos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEstilos.CellDoubleClick
         frmOperacionesEstilos.txtEstiloId.Text = dgvEstilos.CurrentRow.Cells(0).Value
+        frmBalanceos.txtEstiloId.Text = dgvEstilos.CurrentRow.Cells(0).Value
         Me.Close()
     End Sub
 End Class

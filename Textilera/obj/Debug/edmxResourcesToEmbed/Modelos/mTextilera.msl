@@ -55,6 +55,7 @@
     <EntitySetMapping Name="Usuarios">
       <EntityTypeMapping TypeName="TextileraModel.Usuarios">
         <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="FKRolId" ColumnName="FKRolId" />
           <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Apellido" ColumnName="Apellido" />
@@ -105,6 +106,15 @@
           <ScalarProperty Name="TiempoEstandarMinutos" ColumnName="TiempoEstandarMinutos" />
           <ScalarProperty Name="TiempoEstandarSegundos" ColumnName="TiempoEstandarSegundos" />
           <ScalarProperty Name="OperacionBalanceoId" ColumnName="OperacionBalanceoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="eliminarDetalle" FunctionName="TextileraModel.Store.eliminarDetalle" />
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="TextileraModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RolDescripcion" ColumnName="RolDescripcion" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

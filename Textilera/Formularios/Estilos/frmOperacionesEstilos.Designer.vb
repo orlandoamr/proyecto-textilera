@@ -22,34 +22,39 @@ Partial Class frmOperacionesEstilos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnAdd = New System.Windows.Forms.Button()
         Me.txtIdOperacion = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtEstiloId = New System.Windows.Forms.TextBox()
         Me.lbCodigo = New System.Windows.Forms.Label()
         Me.dgvEstilo = New System.Windows.Forms.DataGridView()
+        Me.IDOperacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SAH = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvOperaciones = New System.Windows.Forms.DataGridView()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtNumero = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtSah = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnDel = New System.Windows.Forms.Button()
-        Me.IDOperacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SAH = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnBuscarCategorias = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.btnNuevo = New System.Windows.Forms.Button()
         CType(Me.dgvEstilo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvOperaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -59,12 +64,11 @@ Partial Class frmOperacionesEstilos
         Me.txtNombre.AccessibleName = "nombre"
         Me.txtNombre.Enabled = False
         Me.txtNombre.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(926, 409)
-        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNombre.Location = New System.Drawing.Point(800, 349)
         Me.txtNombre.MaxLength = 140
         Me.txtNombre.Multiline = True
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(365, 56)
+        Me.txtNombre.Size = New System.Drawing.Size(365, 46)
         Me.txtNombre.TabIndex = 46
         '
         'Label2
@@ -72,66 +76,33 @@ Partial Class frmOperacionesEstilos
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(925, 383)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(797, 326)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 22)
+        Me.Label2.Size = New System.Drawing.Size(68, 20)
         Me.Label2.TabIndex = 45
         Me.Label2.Text = "Nombre"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label1.BackColor = System.Drawing.Color.GhostWhite
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(29, 9)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(66, 43)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(227, 23)
+        Me.Label1.Size = New System.Drawing.Size(180, 21)
         Me.Label1.TabIndex = 44
         Me.Label1.Text = "Operaciones del Estilo"
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(202, Byte), Integer))
-        Me.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.MediumBlue
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.ForeColor = System.Drawing.Color.AliceBlue
-        Me.btnGuardar.Location = New System.Drawing.Point(925, 762)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(366, 59)
-        Me.btnGuardar.TabIndex = 43
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = False
-        '
-        'btnAdd
-        '
-        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdd.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.ForeColor = System.Drawing.Color.AliceBlue
-        Me.btnAdd.Location = New System.Drawing.Point(926, 586)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(365, 59)
-        Me.btnAdd.TabIndex = 40
-        Me.btnAdd.Text = "Añadir al estilo"
-        Me.btnAdd.UseVisualStyleBackColor = False
         '
         'txtIdOperacion
         '
         Me.txtIdOperacion.AccessibleName = "id operación"
         Me.txtIdOperacion.Enabled = False
         Me.txtIdOperacion.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdOperacion.Location = New System.Drawing.Point(926, 228)
-        Me.txtIdOperacion.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtIdOperacion.Location = New System.Drawing.Point(800, 215)
         Me.txtIdOperacion.MaxLength = 15
         Me.txtIdOperacion.Name = "txtIdOperacion"
-        Me.txtIdOperacion.Size = New System.Drawing.Size(365, 30)
+        Me.txtIdOperacion.Size = New System.Drawing.Size(365, 25)
         Me.txtIdOperacion.TabIndex = 39
         '
         'Label3
@@ -139,22 +110,21 @@ Partial Class frmOperacionesEstilos
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(925, 202)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(797, 186)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(134, 22)
+        Me.Label3.Size = New System.Drawing.Size(109, 20)
         Me.Label3.TabIndex = 38
         Me.Label3.Text = "ID Operacion"
         '
         'txtEstiloId
         '
+        Me.txtEstiloId.AccessibleName = "estilo"
         Me.txtEstiloId.Enabled = False
         Me.txtEstiloId.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEstiloId.Location = New System.Drawing.Point(927, 69)
-        Me.txtEstiloId.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtEstiloId.Location = New System.Drawing.Point(801, 93)
         Me.txtEstiloId.MaxLength = 15
         Me.txtEstiloId.Name = "txtEstiloId"
-        Me.txtEstiloId.Size = New System.Drawing.Size(365, 30)
+        Me.txtEstiloId.Size = New System.Drawing.Size(365, 25)
         Me.txtEstiloId.TabIndex = 37
         '
         'lbCodigo
@@ -162,177 +132,49 @@ Partial Class frmOperacionesEstilos
         Me.lbCodigo.AutoSize = True
         Me.lbCodigo.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbCodigo.ForeColor = System.Drawing.Color.Black
-        Me.lbCodigo.Location = New System.Drawing.Point(924, 43)
-        Me.lbCodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbCodigo.Location = New System.Drawing.Point(797, 70)
         Me.lbCodigo.Name = "lbCodigo"
-        Me.lbCodigo.Size = New System.Drawing.Size(187, 22)
+        Me.lbCodigo.Size = New System.Drawing.Size(154, 20)
         Me.lbCodigo.TabIndex = 36
         Me.lbCodigo.Text = "Seleccione un estilo"
         '
         'dgvEstilo
         '
+        Me.dgvEstilo.AllowUserToAddRows = False
         Me.dgvEstilo.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvEstilo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(202, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvEstilo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(202, Byte), Integer))
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle19.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvEstilo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
         Me.dgvEstilo.ColumnHeadersHeight = 35
         Me.dgvEstilo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvEstilo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDOperacion, Me.Numero, Me.Nombre, Me.SAH})
         Me.dgvEstilo.EnableHeadersVisualStyles = False
-        Me.dgvEstilo.Location = New System.Drawing.Point(24, 43)
-        Me.dgvEstilo.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvEstilo.Location = New System.Drawing.Point(70, 74)
         Me.dgvEstilo.Name = "dgvEstilo"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(202, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvEstilo.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(202, Byte), Integer))
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvEstilo.RowHeadersDefaultCellStyle = DataGridViewCellStyle20
         Me.dgvEstilo.RowHeadersWidth = 51
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(99, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvEstilo.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(99, Byte), Integer))
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvEstilo.RowsDefaultCellStyle = DataGridViewCellStyle21
         Me.dgvEstilo.RowTemplate.Height = 24
-        Me.dgvEstilo.Size = New System.Drawing.Size(866, 347)
+        Me.dgvEstilo.Size = New System.Drawing.Size(650, 257)
         Me.dgvEstilo.TabIndex = 35
-        '
-        'dgvOperaciones
-        '
-        Me.dgvOperaciones.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvOperaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(202, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvOperaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvOperaciones.ColumnHeadersHeight = 35
-        Me.dgvOperaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvOperaciones.EnableHeadersVisualStyles = False
-        Me.dgvOperaciones.Location = New System.Drawing.Point(24, 472)
-        Me.dgvOperaciones.Margin = New System.Windows.Forms.Padding(4)
-        Me.dgvOperaciones.Name = "dgvOperaciones"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(202, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvOperaciones.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.dgvOperaciones.RowHeadersWidth = 51
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(99, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvOperaciones.RowsDefaultCellStyle = DataGridViewCellStyle6
-        Me.dgvOperaciones.RowTemplate.Height = 24
-        Me.dgvOperaciones.Size = New System.Drawing.Size(866, 349)
-        Me.dgvOperaciones.TabIndex = 47
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.MediumBlue
-        Me.btnBuscar.FlatAppearance.BorderSize = 0
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscar.ForeColor = System.Drawing.Color.AliceBlue
-        Me.btnBuscar.Location = New System.Drawing.Point(927, 107)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(365, 59)
-        Me.btnBuscar.TabIndex = 50
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = False
-        '
-        'txtNumero
-        '
-        Me.txtNumero.AccessibleName = "número de operación"
-        Me.txtNumero.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumero.Location = New System.Drawing.Point(926, 316)
-        Me.txtNumero.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtNumero.MaxLength = 15
-        Me.txtNumero.Name = "txtNumero"
-        Me.txtNumero.Size = New System.Drawing.Size(365, 30)
-        Me.txtNumero.TabIndex = 52
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(924, 290)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(213, 22)
-        Me.Label4.TabIndex = 51
-        Me.Label4.Text = "Número de operación"
-        '
-        'txtSah
-        '
-        Me.txtSah.AccessibleName = "nombre de la categoría"
-        Me.txtSah.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSah.Location = New System.Drawing.Point(926, 513)
-        Me.txtSah.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtSah.MaxLength = 15
-        Me.txtSah.Name = "txtSah"
-        Me.txtSah.Size = New System.Drawing.Size(365, 30)
-        Me.txtSah.TabIndex = 54
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(925, 487)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(47, 22)
-        Me.Label5.TabIndex = 53
-        Me.Label5.Text = "SAH"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(28, 431)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(228, 23)
-        Me.Label6.TabIndex = 55
-        Me.Label6.Text = "Todas las operaciones"
-        '
-        'btnDel
-        '
-        Me.btnDel.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDel.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDel.ForeColor = System.Drawing.Color.AliceBlue
-        Me.btnDel.Location = New System.Drawing.Point(926, 653)
-        Me.btnDel.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnDel.Name = "btnDel"
-        Me.btnDel.Size = New System.Drawing.Size(365, 59)
-        Me.btnDel.TabIndex = 56
-        Me.btnDel.Text = "Quitar del estilo"
-        Me.btnDel.UseVisualStyleBackColor = False
         '
         'IDOperacion
         '
@@ -362,29 +204,269 @@ Partial Class frmOperacionesEstilos
         Me.SAH.Name = "SAH"
         Me.SAH.Width = 125
         '
+        'dgvOperaciones
+        '
+        Me.dgvOperaciones.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvOperaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(202, Byte), Integer))
+        DataGridViewCellStyle22.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle22.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvOperaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
+        Me.dgvOperaciones.ColumnHeadersHeight = 35
+        Me.dgvOperaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvOperaciones.EnableHeadersVisualStyles = False
+        Me.dgvOperaciones.Location = New System.Drawing.Point(70, 401)
+        Me.dgvOperaciones.Name = "dgvOperaciones"
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(202, Byte), Integer))
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvOperaciones.RowHeadersDefaultCellStyle = DataGridViewCellStyle23
+        Me.dgvOperaciones.RowHeadersWidth = 51
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(99, Byte), Integer))
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvOperaciones.RowsDefaultCellStyle = DataGridViewCellStyle24
+        Me.dgvOperaciones.RowTemplate.Height = 24
+        Me.dgvOperaciones.Size = New System.Drawing.Size(650, 254)
+        Me.dgvOperaciones.TabIndex = 47
+        '
+        'txtNumero
+        '
+        Me.txtNumero.AccessibleName = "número de operación"
+        Me.txtNumero.Enabled = False
+        Me.txtNumero.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNumero.Location = New System.Drawing.Point(800, 281)
+        Me.txtNumero.MaxLength = 15
+        Me.txtNumero.Name = "txtNumero"
+        Me.txtNumero.Size = New System.Drawing.Size(365, 25)
+        Me.txtNumero.TabIndex = 52
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(796, 258)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(172, 20)
+        Me.Label4.TabIndex = 51
+        Me.Label4.Text = "Número de operación"
+        '
+        'txtSah
+        '
+        Me.txtSah.AccessibleName = "sah"
+        Me.txtSah.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSah.Location = New System.Drawing.Point(800, 432)
+        Me.txtSah.MaxLength = 15
+        Me.txtSah.Name = "txtSah"
+        Me.txtSah.Size = New System.Drawing.Size(365, 25)
+        Me.txtSah.TabIndex = 54
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(797, 409)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(37, 20)
+        Me.Label5.TabIndex = 53
+        Me.Label5.Text = "SAH"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(66, 368)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(180, 21)
+        Me.Label6.TabIndex = 55
+        Me.Label6.Text = "Todas las operaciones"
+        '
+        'btnDel
+        '
+        Me.btnDel.BackColor = System.Drawing.Color.Maroon
+        Me.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDel.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDel.ForeColor = System.Drawing.Color.AliceBlue
+        Me.btnDel.Image = Global.Textilera.My.Resources.Resources.Minus_icon
+        Me.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnDel.Location = New System.Drawing.Point(989, 473)
+        Me.btnDel.Name = "btnDel"
+        Me.btnDel.Padding = New System.Windows.Forms.Padding(15, 0, 15, 0)
+        Me.btnDel.Size = New System.Drawing.Size(176, 50)
+        Me.btnDel.TabIndex = 56
+        Me.btnDel.Text = "Quitar"
+        Me.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDel.UseVisualStyleBackColor = False
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(202, Byte), Integer))
+        Me.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.MediumBlue
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.ForeColor = System.Drawing.Color.AliceBlue
+        Me.btnGuardar.Image = Global.Textilera.My.Resources.Resources.Save_icon
+        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar.Location = New System.Drawing.Point(801, 547)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Padding = New System.Windows.Forms.Padding(75, 0, 75, 0)
+        Me.btnGuardar.Size = New System.Drawing.Size(363, 50)
+        Me.btnGuardar.TabIndex = 58
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
+        'btnBuscarCategorias
+        '
+        Me.btnBuscarCategorias.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnBuscarCategorias.FlatAppearance.BorderColor = System.Drawing.Color.MediumBlue
+        Me.btnBuscarCategorias.FlatAppearance.BorderSize = 0
+        Me.btnBuscarCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarCategorias.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarCategorias.ForeColor = System.Drawing.Color.AliceBlue
+        Me.btnBuscarCategorias.Image = Global.Textilera.My.Resources.Resources.Search_icon
+        Me.btnBuscarCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnBuscarCategorias.Location = New System.Drawing.Point(801, 124)
+        Me.btnBuscarCategorias.Name = "btnBuscarCategorias"
+        Me.btnBuscarCategorias.Padding = New System.Windows.Forms.Padding(75, 0, 75, 0)
+        Me.btnBuscarCategorias.Size = New System.Drawing.Size(365, 50)
+        Me.btnBuscarCategorias.TabIndex = 57
+        Me.btnBuscarCategorias.Text = "Buscar"
+        Me.btnBuscarCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBuscarCategorias.UseVisualStyleBackColor = False
+        '
+        'btnAdd
+        '
+        Me.btnAdd.BackColor = System.Drawing.Color.Green
+        Me.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.Color.AliceBlue
+        Me.btnAdd.Image = Global.Textilera.My.Resources.Resources.icons8_plus_1
+        Me.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAdd.Location = New System.Drawing.Point(801, 473)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Padding = New System.Windows.Forms.Padding(15, 0, 15, 0)
+        Me.btnAdd.Size = New System.Drawing.Size(176, 50)
+        Me.btnAdd.TabIndex = 40
+        Me.btnAdd.Text = "Añadir"
+        Me.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAdd.UseVisualStyleBackColor = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(355, 370)
+        Me.TextBox1.MaxLength = 15
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(365, 25)
+        Me.TextBox1.TabIndex = 59
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(351, 345)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(58, 20)
+        Me.Label7.TabIndex = 60
+        Me.Label7.Text = "Buscar"
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCerrar.Image = Global.Textilera.My.Resources.Resources.Delete_icon
+        Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCerrar.Location = New System.Drawing.Point(10, 9)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.btnCerrar.Size = New System.Drawing.Size(45, 42)
+        Me.btnCerrar.TabIndex = 106
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCerrar.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.GhostWhite
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(482, 9)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(272, 23)
+        Me.Label8.TabIndex = 105
+        Me.Label8.Text = "Asignar operaciones a estilo"
+        '
+        'btnNuevo
+        '
+        Me.btnNuevo.BackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(202, Byte), Integer))
+        Me.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.MediumBlue
+        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevo.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevo.ForeColor = System.Drawing.Color.AliceBlue
+        Me.btnNuevo.Image = Global.Textilera.My.Resources.Resources.Plus_icon
+        Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnNuevo.Location = New System.Drawing.Point(801, 605)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Padding = New System.Windows.Forms.Padding(75, 0, 75, 0)
+        Me.btnNuevo.Size = New System.Drawing.Size(363, 50)
+        Me.btnNuevo.TabIndex = 107
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnNuevo.UseVisualStyleBackColor = False
+        '
         'frmOperacionesEstilos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1312, 834)
+        Me.ClientSize = New System.Drawing.Size(1222, 694)
+        Me.Controls.Add(Me.btnNuevo)
+        Me.Controls.Add(Me.btnCerrar)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.btnGuardar)
+        Me.Controls.Add(Me.btnBuscarCategorias)
         Me.Controls.Add(Me.btnDel)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtSah)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtNumero)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.dgvOperaciones)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.txtIdOperacion)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtEstiloId)
         Me.Controls.Add(Me.lbCodigo)
         Me.Controls.Add(Me.dgvEstilo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmOperacionesEstilos"
         Me.Text = "frmOperacionesEstilos"
         CType(Me.dgvEstilo, System.ComponentModel.ISupportInitialize).EndInit()
@@ -397,7 +479,6 @@ Partial Class frmOperacionesEstilos
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnGuardar As Button
     Friend WithEvents btnAdd As Button
     Friend WithEvents txtIdOperacion As TextBox
     Friend WithEvents Label3 As Label
@@ -405,7 +486,6 @@ Partial Class frmOperacionesEstilos
     Friend WithEvents lbCodigo As Label
     Friend WithEvents dgvEstilo As DataGridView
     Friend WithEvents dgvOperaciones As DataGridView
-    Friend WithEvents btnBuscar As Button
     Friend WithEvents txtNumero As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtSah As TextBox
@@ -416,4 +496,11 @@ Partial Class frmOperacionesEstilos
     Friend WithEvents Numero As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents SAH As DataGridViewTextBoxColumn
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnBuscarCategorias As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents btnCerrar As Button
+    Friend WithEvents Label8 As Label
+    Friend WithEvents btnNuevo As Button
 End Class

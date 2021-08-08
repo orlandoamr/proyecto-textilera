@@ -11,12 +11,31 @@
         frmBuscarCategorias.Show()
     End Sub
 
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        Dim textBoxes As New List(Of TextBox) From {txtCategoria, txtCodigo, txtDescripcion}
-        Dim val = validarCamposVacios(textBoxes)
+    Private Sub nuevo()
+        txtCategoria.Clear()
+        txtCodigo.Clear()
+        txtDescripcion.Clear()
+        chkEstado.Checked = False
+        editar = False
+    End Sub
+    Private Sub dgvEstilos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEstilos.CellDoubleClick
+        idCategoria = dgvEstilos.CurrentRow.Cells(3).Value
+        txtCodigo.Text = dgvEstilos.CurrentRow.Cells(0).Value
+        txtDescripcion.Text = dgvEstilos.CurrentRow.Cells(1).Value
+        txtCategoria.Text = dgvEstilos.CurrentRow.Cells(2).Value
+        chkEstado.Checked = dgvEstilos.CurrentRow.Cells(4).Value
+        editar = True
+    End Sub
+    Private Sub btnNuevo_Click_1(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        nuevo()
+    End Sub
 
-        If Not val("estado") = "ok" Then
-            MsgCampoVacio(val("campo"))
+    Private Sub btnGuardar_Click_1(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim textBoxes As New List(Of TextBox) From {txtCategoria, txtCodigo, txtDescripcion}
+        Dim validar = validarCamposVacios(textBoxes)
+
+        If Not validar(0) Then
+            MsgCampoVacio(validar(1))
 
         ElseIf editar = True Then
             Dim tEs = db.Estilos.FirstOrDefault(Function(x) x.EstiloId = txtCodigo.Text)
@@ -47,24 +66,7 @@
         End If
     End Sub
 
-    Private Sub nuevo()
-        txtCategoria.Clear()
-        txtCodigo.Clear()
-        txtDescripcion.Clear()
-        chkEstado.Checked = False
-        editar = False
-    End Sub
-    Private Sub dgvEstilos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEstilos.CellDoubleClick
-        idCategoria = dgvEstilos.CurrentRow.Cells(3).Value
-        txtCodigo.Text = dgvEstilos.CurrentRow.Cells(0).Value
-        txtDescripcion.Text = dgvEstilos.CurrentRow.Cells(1).Value
-        txtCategoria.Text = dgvEstilos.CurrentRow.Cells(2).Value
-        chkEstado.Checked = dgvEstilos.CurrentRow.Cells(4).Value
-        editar = True
-    End Sub
-
-    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        nuevo()
-        editar = False
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
 End Class

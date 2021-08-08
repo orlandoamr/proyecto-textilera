@@ -5,37 +5,37 @@
         dgvMaquinas.DataSource = obtenerMaquinas(db)
     End Sub
 
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs)
         Dim textBoxes As New List(Of TextBox) From {txtCodigo, txtMaquina, txtEstandar}
-        Dim val = validarCamposVacios(textBoxes)
+        Dim validar = validarCamposVacios(textBoxes)
 
-        If Not val("estado") = "ok" Then
-            MsgCampoVacio(val("campo"))
-
-        ElseIf editar = True Then
-            Dim tMaq = db.Maquinas.FirstOrDefault(Function(x) x.MaquinaId = txtCodigo.Text)
-            tMaq.NombreMaquina = txtMaquina.Text
-            tMaq.Estandar = txtEstandar.Text
-            tMaq.EstadoMaquina = chkEstado.Checked
-
-            db.SaveChanges()
-            dgvMaquinas.DataSource = obtenerMaquinas(db)
-            nuevo()
-            MsgActualizacionExitosa()
-            editar = False
+        If Not validar(0) Then
+            MsgCampoVacio(validar(1))
 
         Else
-            Dim tMaq As New Maquinas()
-            tMaq.NombreMaquina = txtMaquina.Text
-            tMaq.Estandar = txtEstandar.Text
-            tMaq.EstadoMaquina = chkEstado.Checked
-            db.Maquinas.Add(tMaq)
-            db.SaveChanges()
+            If editar = True Then
+                Dim tMaq = db.Maquinas.FirstOrDefault(Function(x) x.MaquinaId = txtCodigo.Text)
+                tMaq.NombreMaquina = txtMaquina.Text
+                tMaq.Estandar = txtEstandar.Text
+                tMaq.EstadoMaquina = chkEstado.Checked
 
-            dgvMaquinas.DataSource = obtenerMaquinas(db)
+                db.SaveChanges()
+                dgvMaquinas.DataSource = obtenerMaquinas(db)
+                nuevo()
+                MsgActualizacionExitosa()
+            Else
+                Dim tMaq As New Maquinas()
+                tMaq.NombreMaquina = txtMaquina.Text
+                tMaq.Estandar = txtEstandar.Text
+                tMaq.EstadoMaquina = chkEstado.Checked
+                db.Maquinas.Add(tMaq)
+                db.SaveChanges()
 
-            nuevo()
-            MsgRegistroExitoso()
+                dgvMaquinas.DataSource = obtenerMaquinas(db)
+
+                nuevo()
+                MsgRegistroExitoso()
+            End If
         End If
     End Sub
 
@@ -55,8 +55,11 @@
         editar = True
     End Sub
 
-    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click_1(sender As Object, e As EventArgs) Handles btnNuevo.Click
         nuevo()
-        editar = False
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
 End Class

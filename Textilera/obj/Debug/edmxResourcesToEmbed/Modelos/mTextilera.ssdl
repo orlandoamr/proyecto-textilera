@@ -73,6 +73,13 @@
     <Property Name="FKBalanceoId" Type="bigint" Nullable="false" />
     <Property Name="FKOperacionId" Type="bigint" />
   </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RolId" />
+    </Key>
+    <Property Name="RolId" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RolDescripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -90,10 +97,11 @@
     <Property Name="UsuarioId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar" MaxLength="18" Nullable="false" />
     <Property Name="Apellido" Type="nvarchar" MaxLength="18" Nullable="false" />
-    <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="date" />
     <Property Name="CorreoElectronico" Type="nvarchar" MaxLength="140" Nullable="false" />
     <Property Name="Usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Contrasenia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FKRolId" Type="tinyint" />
     <Property Name="EstadoUsuario" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="FK_BalanceosEstilos_Estilos">
@@ -180,6 +188,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Usuarios_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RolId" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="FKRolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="eliminarDetalle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EstiloId" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="spInsertarCategoria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="NombreCategoria" Type="nvarchar" Mode="In" />
     <Parameter Name="Estado" Type="bit" Mode="In" />
@@ -206,6 +229,7 @@
     <EntitySet Name="Maquinas" EntityType="Self.Maquinas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Operaciones" EntityType="Self.Operaciones" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OperacionesBalanceos" EntityType="Self.OperacionesBalanceos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_BalanceosEstilos_Estilos" Association="Self.FK_BalanceosEstilos_Estilos">
@@ -235,6 +259,10 @@
     <AssociationSet Name="FK_OperacionesBalanceos_Operaciones1" Association="Self.FK_OperacionesBalanceos_Operaciones1">
       <End Role="Operaciones" EntitySet="Operaciones" />
       <End Role="OperacionesBalanceos" EntitySet="OperacionesBalanceos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Roles" Association="Self.FK_Usuarios_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

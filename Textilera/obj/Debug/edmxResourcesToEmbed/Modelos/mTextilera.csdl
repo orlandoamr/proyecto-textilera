@@ -63,11 +63,13 @@
     <Property Name="UsuarioId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Nombre" Type="String" MaxLength="18" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Apellido" Type="String" MaxLength="18" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaNacimiento" Type="DateTime" Precision="0" />
     <Property Name="CorreoElectronico" Type="String" MaxLength="140" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Contrasenia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="EstadoUsuario" Type="Boolean" Nullable="false" />
+    <Property Name="FKRolId" Type="Byte" />
+    <NavigationProperty Name="Roles" Relationship="TextileraModel.FK_Usuarios_Roles" FromRole="Usuarios" ToRole="Roles" />
   </EntityType>
   <Association Name="FK_Estilos_Categorias">
     <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
@@ -161,6 +163,14 @@
       <End Role="Maquinas" EntitySet="Maquinas" />
       <End Role="Operaciones" EntitySet="Operaciones" />
     </AssociationSet>
+    <FunctionImport Name="eliminarDetalle">
+      <Parameter Name="EstiloId" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Roles" EntityType="TextileraModel.Roles" />
+    <AssociationSet Name="FK_Usuarios_Roles" Association="TextileraModel.FK_Usuarios_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="BalanceosEstilos">
     <Key>
@@ -248,6 +258,26 @@
       </Principal>
       <Dependent Role="Operaciones">
         <PropertyRef Name="FKMaquinaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RolId" />
+    </Key>
+    <Property Name="RolId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RolDescripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Usuarios" Relationship="TextileraModel.FK_Usuarios_Roles" FromRole="Roles" ToRole="Usuarios" />
+  </EntityType>
+  <Association Name="FK_Usuarios_Roles">
+    <End Type="TextileraModel.Roles" Role="Roles" Multiplicity="0..1" />
+    <End Type="TextileraModel.Usuarios" Role="Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RolId" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="FKRolId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

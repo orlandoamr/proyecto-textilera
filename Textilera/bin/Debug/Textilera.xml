@@ -27,12 +27,32 @@ Textilera
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Textilera.My.Resources.Resources.Delete_Bin_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Textilera.My.Resources.Resources.Delete_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Textilera.My.Resources.Resources.Group">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Textilera.My.Resources.Resources.icons8_home">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Textilera.My.Resources.Resources.icons8_plus_1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Textilera.My.Resources.Resources.Minus_icon">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -58,6 +78,21 @@ Textilera
 </summary>
 </member>
 <member name="P:Textilera.My.Resources.Resources.Picture1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Textilera.My.Resources.Resources.Plus_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Textilera.My.Resources.Resources.Save_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Textilera.My.Resources.Resources.Search_icon">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
