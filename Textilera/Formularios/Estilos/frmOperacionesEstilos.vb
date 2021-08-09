@@ -1,5 +1,5 @@
 ﻿Public Class frmOperacionesEstilos
-    Private db As New TextileraEntities()
+    Private db As New TextileraEntities1()
     Private numeroOperacion As Integer = 1
     Private Sub frmOperacionesEstilos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgvOperaciones.DataSource = obtenerOperacionesHabilitadas(db)
@@ -68,6 +68,10 @@
                 row.Cells("Nombre").Value = txtNombre.Text
                 row.Cells("SAH").Value = txtSah.Text
                 numeroOperacion += 1
+                txtIdOperacion.Clear()
+                txtNombre.Clear()
+                txtNumero.Clear()
+                txtSah.Clear()
             End If
 
         End If
@@ -79,6 +83,7 @@
         Else
             Dim id = dgvEstilo.CurrentCell.RowIndex
             dgvEstilo.Rows.RemoveAt(id)
+            numeroOperacion -= 1
         End If
     End Sub
 
@@ -97,7 +102,6 @@
                 db.DetalleEstilosOperaciones.Add(dt)
                 db.SaveChanges()
                 dt = Nothing
-                numeroOperacion -= 1
             Next
             MsgRegistroExitoso()
             nuevo()
@@ -115,6 +119,7 @@
         txtNumero.Clear()
         txtSah.Clear()
         dgvEstilo.Rows.Clear()
+        numeroOperacion = 0
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click

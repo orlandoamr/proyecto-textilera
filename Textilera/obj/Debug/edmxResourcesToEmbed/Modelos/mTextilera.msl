@@ -73,13 +73,13 @@
     <EntitySetMapping Name="BalanceosEstilos">
       <EntityTypeMapping TypeName="TextileraModel.BalanceosEstilos">
         <MappingFragment StoreEntitySet="BalanceosEstilos">
+          <ScalarProperty Name="UtilizacionRequeridoEquipo" ColumnName="UtilizacionRequeridoEquipo" />
           <ScalarProperty Name="EstadoBalanceo" ColumnName="EstadoBalanceo" />
           <ScalarProperty Name="FKEstiloId" ColumnName="FKEstiloId" />
           <ScalarProperty Name="MetaDocenasSemana" ColumnName="MetaDocenasSemana" />
           <ScalarProperty Name="MetaDocenaDias" ColumnName="MetaDocenaDias" />
           <ScalarProperty Name="MetaDocenasHora" ColumnName="MetaDocenasHora" />
           <ScalarProperty Name="CantidadOperadores" ColumnName="CantidadOperadores" />
-          <ScalarProperty Name="C_UtilizacionRequeridoEquipo" ColumnName="%UtilizacionRequeridoEquipo" />
           <ScalarProperty Name="BalanceoEstiloId" ColumnName="BalanceoEstiloId" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -97,10 +97,10 @@
     <EntitySetMapping Name="OperacionesBalanceos">
       <EntityTypeMapping TypeName="TextileraModel.OperacionesBalanceos">
         <MappingFragment StoreEntitySet="OperacionesBalanceos">
+          <ScalarProperty Name="UtilizacionOperador" ColumnName="UtilizacionOperador" />
           <ScalarProperty Name="FKOperacionId" ColumnName="FKOperacionId" />
           <ScalarProperty Name="FKBalanceoId" ColumnName="FKBalanceoId" />
           <ScalarProperty Name="ParejaBalanceo" ColumnName="ParejaBalanceo" />
-          <ScalarProperty Name="C_UtilizacionOperador" ColumnName="%UtilizacionOperador" />
           <ScalarProperty Name="CantidadOperadores" ColumnName="CantidadOperadores" />
           <ScalarProperty Name="MetaDocenasOperador" ColumnName="MetaDocenasOperador" />
           <ScalarProperty Name="TiempoEstandarMinutos" ColumnName="TiempoEstandarMinutos" />
@@ -118,5 +118,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="eliminarBalanceo" FunctionName="TextileraModel.Store.eliminarBalanceo" />
   </EntityContainerMapping>
 </Mapping>

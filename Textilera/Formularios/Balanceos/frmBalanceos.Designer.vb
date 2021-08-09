@@ -31,6 +31,16 @@ Partial Class frmBalanceos
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.dgvBalanceos = New System.Windows.Forms.DataGridView()
+        Me.Numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDOperacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreOperacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cicloseg = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstandarMin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstandarHora = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DocenasOperador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumOperadores = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ParejaBalanceo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UtilizacionOperador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtUtilizacion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtOperadores = New System.Windows.Forms.TextBox()
@@ -43,14 +53,7 @@ Partial Class frmBalanceos
         Me.Label6 = New System.Windows.Forms.Label()
         Me.chkEstado = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreOperacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cicloseg = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstandarMin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstandarHora = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DocenasOperador = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumOperadores = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UtilizacionOperador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         CType(Me.dgvBalanceos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -150,11 +153,10 @@ Partial Class frmBalanceos
         Me.dgvBalanceos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvBalanceos.ColumnHeadersHeight = 35
         Me.dgvBalanceos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvBalanceos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Numero, Me.NombreOperacion, Me.Cicloseg, Me.EstandarMin, Me.EstandarHora, Me.DocenasOperador, Me.NumOperadores, Me.UtilizacionOperador})
+        Me.dgvBalanceos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Numero, Me.IDOperacion, Me.NombreOperacion, Me.Cicloseg, Me.EstandarMin, Me.EstandarHora, Me.DocenasOperador, Me.NumOperadores, Me.ParejaBalanceo, Me.UtilizacionOperador})
         Me.dgvBalanceos.EnableHeadersVisualStyles = False
-        Me.dgvBalanceos.Location = New System.Drawing.Point(69, 66)
+        Me.dgvBalanceos.Location = New System.Drawing.Point(72, 66)
         Me.dgvBalanceos.Name = "dgvBalanceos"
-        Me.dgvBalanceos.ReadOnly = True
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -173,6 +175,66 @@ Partial Class frmBalanceos
         Me.dgvBalanceos.RowTemplate.Height = 24
         Me.dgvBalanceos.Size = New System.Drawing.Size(650, 531)
         Me.dgvBalanceos.TabIndex = 61
+        '
+        'Numero
+        '
+        Me.Numero.HeaderText = "#Operacion"
+        Me.Numero.Name = "Numero"
+        Me.Numero.Width = 117
+        '
+        'IDOperacion
+        '
+        Me.IDOperacion.HeaderText = "Id Operacion"
+        Me.IDOperacion.Name = "IDOperacion"
+        Me.IDOperacion.Width = 124
+        '
+        'NombreOperacion
+        '
+        Me.NombreOperacion.HeaderText = "Nombre de la Operación"
+        Me.NombreOperacion.Name = "NombreOperacion"
+        Me.NombreOperacion.Width = 206
+        '
+        'Cicloseg
+        '
+        Me.Cicloseg.HeaderText = "Ciclo Seg"
+        Me.Cicloseg.Name = "Cicloseg"
+        Me.Cicloseg.Width = 96
+        '
+        'EstandarMin
+        '
+        Me.EstandarMin.HeaderText = "Estándar docenas/min"
+        Me.EstandarMin.Name = "EstandarMin"
+        Me.EstandarMin.Width = 189
+        '
+        'EstandarHora
+        '
+        Me.EstandarHora.HeaderText = "Estandar docenas/hor"
+        Me.EstandarHora.Name = "EstandarHora"
+        Me.EstandarHora.Width = 186
+        '
+        'DocenasOperador
+        '
+        Me.DocenasOperador.HeaderText = "Docenas/Operador"
+        Me.DocenasOperador.Name = "DocenasOperador"
+        Me.DocenasOperador.Width = 167
+        '
+        'NumOperadores
+        '
+        Me.NumOperadores.HeaderText = "#Operadores"
+        Me.NumOperadores.Name = "NumOperadores"
+        Me.NumOperadores.Width = 124
+        '
+        'ParejaBalanceo
+        '
+        Me.ParejaBalanceo.HeaderText = "Pareja Balanceo"
+        Me.ParejaBalanceo.Name = "ParejaBalanceo"
+        Me.ParejaBalanceo.Width = 147
+        '
+        'UtilizacionOperador
+        '
+        Me.UtilizacionOperador.HeaderText = "%UtilizacionOperador"
+        Me.UtilizacionOperador.Name = "UtilizacionOperador"
+        Me.UtilizacionOperador.Width = 180
         '
         'txtUtilizacion
         '
@@ -236,9 +298,9 @@ Partial Class frmBalanceos
         Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(982, 284)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(138, 20)
+        Me.Label3.Size = New System.Drawing.Size(148, 20)
         Me.Label3.TabIndex = 70
-        Me.Label3.Text = "Meta docenas/m"
+        Me.Label3.Text = "Meta docenas/día"
         '
         'txtDocenasHora
         '
@@ -258,9 +320,9 @@ Partial Class frmBalanceos
         Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(796, 284)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(134, 20)
+        Me.Label4.Size = New System.Drawing.Size(159, 20)
         Me.Label4.TabIndex = 68
-        Me.Label4.Text = "Meta docenas/h"
+        Me.Label4.Text = "Meta docenas/hora"
         '
         'txtDocenasSemana
         '
@@ -280,9 +342,9 @@ Partial Class frmBalanceos
         Me.Label6.ForeColor = System.Drawing.Color.Black
         Me.Label6.Location = New System.Drawing.Point(796, 357)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(131, 20)
+        Me.Label6.Size = New System.Drawing.Size(183, 20)
         Me.Label6.TabIndex = 72
-        Me.Label6.Text = "Meta docenas/s"
+        Me.Label6.Text = "Meta docenas/semana"
         '
         'chkEstado
         '
@@ -307,67 +369,27 @@ Partial Class frmBalanceos
         Me.Label7.TabIndex = 76
         Me.Label7.Text = "Estado"
         '
-        'Numero
+        'btnCerrar
         '
-        Me.Numero.HeaderText = "#Operacion"
-        Me.Numero.Name = "Numero"
-        Me.Numero.ReadOnly = True
-        Me.Numero.Width = 117
-        '
-        'NombreOperacion
-        '
-        Me.NombreOperacion.HeaderText = "Nombre de la Operación"
-        Me.NombreOperacion.Name = "NombreOperacion"
-        Me.NombreOperacion.ReadOnly = True
-        Me.NombreOperacion.Width = 206
-        '
-        'Cicloseg
-        '
-        Me.Cicloseg.HeaderText = "Ciclo Seg"
-        Me.Cicloseg.Name = "Cicloseg"
-        Me.Cicloseg.ReadOnly = True
-        Me.Cicloseg.Width = 96
-        '
-        'EstandarMin
-        '
-        Me.EstandarMin.HeaderText = "Estándar docenas/min"
-        Me.EstandarMin.Name = "EstandarMin"
-        Me.EstandarMin.ReadOnly = True
-        Me.EstandarMin.Width = 189
-        '
-        'EstandarHora
-        '
-        Me.EstandarHora.HeaderText = "Estandar docenas/hor"
-        Me.EstandarHora.Name = "EstandarHora"
-        Me.EstandarHora.ReadOnly = True
-        Me.EstandarHora.Width = 186
-        '
-        'DocenasOperador
-        '
-        Me.DocenasOperador.HeaderText = "Docenas/Operador"
-        Me.DocenasOperador.Name = "DocenasOperador"
-        Me.DocenasOperador.ReadOnly = True
-        Me.DocenasOperador.Width = 167
-        '
-        'NumOperadores
-        '
-        Me.NumOperadores.HeaderText = "#Operadores"
-        Me.NumOperadores.Name = "NumOperadores"
-        Me.NumOperadores.ReadOnly = True
-        Me.NumOperadores.Width = 124
-        '
-        'UtilizacionOperador
-        '
-        Me.UtilizacionOperador.HeaderText = "%UtilizacionOperador"
-        Me.UtilizacionOperador.Name = "UtilizacionOperador"
-        Me.UtilizacionOperador.ReadOnly = True
-        Me.UtilizacionOperador.Width = 180
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCerrar.Image = Global.Textilera.My.Resources.Resources.Delete_icon
+        Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCerrar.Location = New System.Drawing.Point(21, 12)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.btnCerrar.Size = New System.Drawing.Size(45, 42)
+        Me.btnCerrar.TabIndex = 110
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCerrar.UseVisualStyleBackColor = True
         '
         'frmBalanceos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1222, 694)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.chkEstado)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtDocenasSemana)
@@ -387,7 +409,7 @@ Partial Class frmBalanceos
         Me.Controls.Add(Me.txtEstiloId)
         Me.Controls.Add(Me.lbCodigo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmBalanceos"
         Me.Text = "frmBalanceos"
         CType(Me.dgvBalanceos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -415,11 +437,14 @@ Partial Class frmBalanceos
     Friend WithEvents chkEstado As CheckBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Numero As DataGridViewTextBoxColumn
+    Friend WithEvents IDOperacion As DataGridViewTextBoxColumn
     Friend WithEvents NombreOperacion As DataGridViewTextBoxColumn
     Friend WithEvents Cicloseg As DataGridViewTextBoxColumn
     Friend WithEvents EstandarMin As DataGridViewTextBoxColumn
     Friend WithEvents EstandarHora As DataGridViewTextBoxColumn
     Friend WithEvents DocenasOperador As DataGridViewTextBoxColumn
     Friend WithEvents NumOperadores As DataGridViewTextBoxColumn
+    Friend WithEvents ParejaBalanceo As DataGridViewTextBoxColumn
     Friend WithEvents UtilizacionOperador As DataGridViewTextBoxColumn
+    Friend WithEvents btnCerrar As Button
 End Class

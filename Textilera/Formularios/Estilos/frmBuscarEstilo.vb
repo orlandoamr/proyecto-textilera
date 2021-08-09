@@ -1,5 +1,5 @@
 ﻿Public Class frmBuscarEstilo
-    Private db As New TextileraEntities()
+    Private db As New TextileraEntities1()
     Private Sub frmBuscarEstilo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgvEstilos.DataSource = obtenerEstilosHabilitados(db)
     End Sub

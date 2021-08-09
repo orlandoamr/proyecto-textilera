@@ -1,5 +1,5 @@
 ﻿Module mdlUsuarios
-    Public Function obtenerUsuarios(db As TextileraEntities)
+    Public Function obtenerUsuarios(db As TextileraEntities1)
         Dim tUs = From us In db.Usuarios
                   Join rol In db.Roles On rol.RolId Equals us.FKRolId
                   Select IDUsuario = us.UsuarioId,
@@ -13,7 +13,7 @@
         Return tUs.ToList()
     End Function
 
-    Public Function obtenerRoles(db As TextileraEntities)
+    Public Function obtenerRoles(db As TextileraEntities1)
         Dim tRo = From ro In db.Roles
                   Select IDRol = ro.RolId,
                          DescripcionRol = ro.RolDescripcion

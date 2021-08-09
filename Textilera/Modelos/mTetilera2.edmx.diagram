@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6632c78e89d94bc6aa1c61fe4e2da816" Name="Diagram1">
+        <EntityTypeShape EntityType="TextileraModel1.BalanceosEstilos" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TextileraModel1.Categorias" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="TextileraModel1.DetalleEstilosOperaciones" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TextileraModel1.Estilos" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TextileraModel1.Maquinas" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TextileraModel1.Operaciones" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TextileraModel1.OperacionesBalanceos" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TextileraModel1.Roles" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TextileraModel1.sysdiagrams" Width="1.5" PointX="5.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TextileraModel1.Usuarios" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="TextileraModel1.vtObtenerCategorias" Width="1.5" PointX="7.75" PointY="8.875" IsExpanded="true" />
+        <AssociationConnector Association="TextileraModel1.FK_BalanceosEstilos_Estilos" ManuallyRouted="false" />
+        <AssociationConnector Association="TextileraModel1.FK_OperacionesBalanceos_BalanceosEstilos" ManuallyRouted="false" />
+        <AssociationConnector Association="TextileraModel1.FK_Estilos_Categorias" ManuallyRouted="false" />
+        <AssociationConnector Association="TextileraModel1.FK_DetalleEstilosOperaciones_Estilos" ManuallyRouted="false" />
+        <AssociationConnector Association="TextileraModel1.FK_DetalleEstilosOperaciones_Operaciones1" ManuallyRouted="false" />
+        <AssociationConnector Association="TextileraModel1.FK_Operaciones_Maquinas" ManuallyRouted="false" />
+        <AssociationConnector Association="TextileraModel1.FK_OperacionesBalanceos_Operaciones1" ManuallyRouted="false" />
+        <AssociationConnector Association="TextileraModel1.FK_Usuarios_Roles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,5 +1,5 @@
 ﻿Module mdlCategorias
-    Public Function obtenerCategorias(db As TextileraEntities)
+    Public Function obtenerCategorias(db As TextileraEntities1)
         Dim tCat = From cat In db.Categorias
                    Select ID = cat.CategoriaId,
                           Categoría = cat.NombreCategoria,
@@ -7,7 +7,7 @@
                           Estado = cat.EstadoCategoria
         Return tCat.ToList()
     End Function
-    Public Function obtenerCategoriasHabilitadas(db As TextileraEntities)
+    Public Function obtenerCategoriasHabilitadas(db As TextileraEntities1)
         Dim tCat = From cat In db.Categorias
                    Select ID = cat.CategoriaId,
                           Categoría = cat.NombreCategoria,

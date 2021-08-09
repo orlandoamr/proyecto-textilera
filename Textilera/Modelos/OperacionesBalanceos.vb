@@ -16,7 +16,7 @@ Partial Public Class OperacionesBalanceos
     Public Property TiempoEstandarMinutos As Double
     Public Property MetaDocenasOperador As Double
     Public Property CantidadOperadores As Double
-    Public Property C_UtilizacionOperador As Byte
+    Public Property UtilizacionOperador As String
     Public Property ParejaBalanceo As String
     Public Property FKBalanceoId As Long
     Public Property FKOperacionId As Nullable(Of Long)

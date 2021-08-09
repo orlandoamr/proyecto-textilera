@@ -1,5 +1,5 @@
 ﻿Module mdlEstilos
-    Public Function obtenerEstilos(db As TextileraEntities)
+    Public Function obtenerEstilos(db As TextileraEntities1)
         Dim tEst = From es In db.Estilos
                    Join cat In db.Categorias On cat.CategoriaId Equals es.FKCategoriaId
                    Select IDEstilo = es.EstiloId,
@@ -9,7 +9,7 @@
                           Estado = es.EstadoEstilo
         Return tEst.ToList()
     End Function
-    Public Function obtenerEstilosHabilitados(db As TextileraEntities)
+    Public Function obtenerEstilosHabilitados(db As TextileraEntities1)
         Dim tEst = From es In db.Estilos
                    Join cat In db.Categorias On cat.CategoriaId Equals es.FKCategoriaId
                    Where es.EstadoEstilo = True
@@ -20,7 +20,7 @@
                           Estado = es.EstadoEstilo
         Return tEst.ToList()
     End Function
-    Public Function obtenerEstilosOperaciones(db As TextileraEntities)
+    Public Function obtenerEstilosOperaciones(db As TextileraEntities1)
         Dim tEst = From es In db.Estilos
                    Join det In db.DetalleEstilosOperaciones On det.EstiloId Equals es.EstiloId
                    Join op In db.Operaciones On det.OperacionId Equals op.OperacionId

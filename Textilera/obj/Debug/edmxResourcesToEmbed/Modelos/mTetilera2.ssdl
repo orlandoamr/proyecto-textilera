@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TextileraModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BalanceosEstilos">
+    <Key>
+      <PropertyRef Name="BalanceoEstiloId" />
+    </Key>
+    <Property Name="BalanceoEstiloId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UtilizacionRequeridoEquipo" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="CantidadOperadores" Type="tinyint" Nullable="false" />
+    <Property Name="MetaDocenasHora" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="MetaDocenaDias" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="MetaDocenasSemana" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="FKEstiloId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EstadoBalanceo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="CategoriaId" />
+    </Key>
+    <Property Name="CategoriaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreCategoria" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DescripcionCategoria" Type="nvarchar" MaxLength="150" />
+    <Property Name="EstadoCategoria" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleEstilosOperaciones">
+    <Key>
+      <PropertyRef Name="EstiloId" />
+      <PropertyRef Name="OperacionId" />
+    </Key>
+    <Property Name="EstiloId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OperacionId" Type="bigint" Nullable="false" />
+    <Property Name="NumeroOperacion" Type="tinyint" Nullable="false" />
+    <Property Name="SAH" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estilos">
+    <Key>
+      <PropertyRef Name="EstiloId" />
+    </Key>
+    <Property Name="EstiloId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DescripcionEstilo" Type="nvarchar" MaxLength="150" />
+    <Property Name="FKCategoriaId" Type="bigint" Nullable="false" />
+    <Property Name="EstadoEstilo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Maquinas">
+    <Key>
+      <PropertyRef Name="MaquinaId" />
+    </Key>
+    <Property Name="MaquinaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreMaquina" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estandar" Type="int" />
+    <Property Name="EstadoMaquina" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Operaciones">
+    <Key>
+      <PropertyRef Name="OperacionId" />
+    </Key>
+    <Property Name="OperacionId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreOperacion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="FKMaquinaId" Type="bigint" Nullable="false" />
+    <Property Name="EstadoOperacion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OperacionesBalanceos">
+    <Key>
+      <PropertyRef Name="OperacionBalanceoId" />
+    </Key>
+    <Property Name="OperacionBalanceoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TiempoEstandarSegundos" Type="float" Nullable="false" />
+    <Property Name="TiempoEstandarMinutos" Type="float" Nullable="false" />
+    <Property Name="MetaDocenasOperador" Type="float" Nullable="false" />
+    <Property Name="CantidadOperadores" Type="float" Nullable="false" />
+    <Property Name="UtilizacionOperador" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ParejaBalanceo" Type="varchar" MaxLength="50" />
+    <Property Name="FKBalanceoId" Type="bigint" Nullable="false" />
+    <Property Name="FKOperacionId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RolId" />
+    </Key>
+    <Property Name="RolId" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RolDescripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="UsuarioId" />
+    </Key>
+    <Property Name="UsuarioId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="18" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar" MaxLength="18" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="date" />
+    <Property Name="CorreoElectronico" Type="nvarchar" MaxLength="140" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Contrasenia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FKRolId" Type="tinyint" />
+    <Property Name="EstadoUsuario" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Textilera.dbo.vtObtenerCategorias' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vtObtenerCategorias">
+    <Key>
+      <PropertyRef Name="CategoriaId" />
+      <PropertyRef Name="NombreCategoria" />
+    </Key>
+    <Property Name="CategoriaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreCategoria" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BalanceosEstilos_Estilos">
+    <End Role="Estilos" Type="Self.Estilos" Multiplicity="1" />
+    <End Role="BalanceosEstilos" Type="Self.BalanceosEstilos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estilos">
+        <PropertyRef Name="EstiloId" />
+      </Principal>
+      <Dependent Role="BalanceosEstilos">
+        <PropertyRef Name="FKEstiloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleEstilosOperaciones_Estilos">
+    <End Role="Estilos" Type="Self.Estilos" Multiplicity="1" />
+    <End Role="DetalleEstilosOperaciones" Type="Self.DetalleEstilosOperaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estilos">
+        <PropertyRef Name="EstiloId" />
+      </Principal>
+      <Dependent Role="DetalleEstilosOperaciones">
+        <PropertyRef Name="EstiloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleEstilosOperaciones_Operaciones1">
+    <End Role="Operaciones" Type="Self.Operaciones" Multiplicity="1" />
+    <End Role="DetalleEstilosOperaciones" Type="Self.DetalleEstilosOperaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operaciones">
+        <PropertyRef Name="OperacionId" />
+      </Principal>
+      <Dependent Role="DetalleEstilosOperaciones">
+        <PropertyRef Name="OperacionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estilos_Categorias">
+    <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
+    <End Role="Estilos" Type="Self.Estilos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="CategoriaId" />
+      </Principal>
+      <Dependent Role="Estilos">
+        <PropertyRef Name="FKCategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Operaciones_Maquinas">
+    <End Role="Maquinas" Type="Self.Maquinas" Multiplicity="1" />
+    <End Role="Operaciones" Type="Self.Operaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Maquinas">
+        <PropertyRef Name="MaquinaId" />
+      </Principal>
+      <Dependent Role="Operaciones">
+        <PropertyRef Name="FKMaquinaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OperacionesBalanceos_BalanceosEstilos">
+    <End Role="BalanceosEstilos" Type="Self.BalanceosEstilos" Multiplicity="1" />
+    <End Role="OperacionesBalanceos" Type="Self.OperacionesBalanceos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BalanceosEstilos">
+        <PropertyRef Name="BalanceoEstiloId" />
+      </Principal>
+      <Dependent Role="OperacionesBalanceos">
+        <PropertyRef Name="FKBalanceoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OperacionesBalanceos_Operaciones1">
+    <End Role="Operaciones" Type="Self.Operaciones" Multiplicity="0..1" />
+    <End Role="OperacionesBalanceos" Type="Self.OperacionesBalanceos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operaciones">
+        <PropertyRef Name="OperacionId" />
+      </Principal>
+      <Dependent Role="OperacionesBalanceos">
+        <PropertyRef Name="FKOperacionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RolId" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="FKRolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="eliminarBalanceo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EstiloId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="eliminarDetalle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EstiloId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spInsertarCategoria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NombreCategoria" Type="nvarchar" Mode="In" />
+    <Parameter Name="Estado" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="spInsertarEstilo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EstiloId" Type="nvarchar" Mode="In" />
+    <Parameter Name="FKCategoriaId" Type="bigint" Mode="In" />
+    <Parameter Name="Estado" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="spInsertarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nom" Type="nvarchar" Mode="In" />
+    <Parameter Name="ape" Type="nvarchar" Mode="In" />
+    <Parameter Name="fna" Type="date" Mode="In" />
+    <Parameter Name="ce" Type="nvarchar" Mode="In" />
+    <Parameter Name="usu" Type="nvarchar" Mode="In" />
+    <Parameter Name="con" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="est" Type="bit" Mode="In" />
+  </Function>
+  <EntityContainer Name="TextileraModel1StoreContainer">
+    <EntitySet Name="BalanceosEstilos" EntityType="Self.BalanceosEstilos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetalleEstilosOperaciones" EntityType="Self.DetalleEstilosOperaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estilos" EntityType="Self.Estilos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Maquinas" EntityType="Self.Maquinas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Operaciones" EntityType="Self.Operaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OperacionesBalanceos" EntityType="Self.OperacionesBalanceos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vtObtenerCategorias" EntityType="Self.vtObtenerCategorias" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vtObtenerCategorias].[CategoriaId] AS [CategoriaId], 
+[vtObtenerCategorias].[NombreCategoria] AS [NombreCategoria]
+FROM [dbo].[vtObtenerCategorias] AS [vtObtenerCategorias]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_BalanceosEstilos_Estilos" Association="Self.FK_BalanceosEstilos_Estilos">
+      <End Role="Estilos" EntitySet="Estilos" />
+      <End Role="BalanceosEstilos" EntitySet="BalanceosEstilos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleEstilosOperaciones_Estilos" Association="Self.FK_DetalleEstilosOperaciones_Estilos">
+      <End Role="Estilos" EntitySet="Estilos" />
+      <End Role="DetalleEstilosOperaciones" EntitySet="DetalleEstilosOperaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleEstilosOperaciones_Operaciones1" Association="Self.FK_DetalleEstilosOperaciones_Operaciones1">
+      <End Role="Operaciones" EntitySet="Operaciones" />
+      <End Role="DetalleEstilosOperaciones" EntitySet="DetalleEstilosOperaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estilos_Categorias" Association="Self.FK_Estilos_Categorias">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Estilos" EntitySet="Estilos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Operaciones_Maquinas" Association="Self.FK_Operaciones_Maquinas">
+      <End Role="Maquinas" EntitySet="Maquinas" />
+      <End Role="Operaciones" EntitySet="Operaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OperacionesBalanceos_BalanceosEstilos" Association="Self.FK_OperacionesBalanceos_BalanceosEstilos">
+      <End Role="BalanceosEstilos" EntitySet="BalanceosEstilos" />
+      <End Role="OperacionesBalanceos" EntitySet="OperacionesBalanceos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OperacionesBalanceos_Operaciones1" Association="Self.FK_OperacionesBalanceos_Operaciones1">
+      <End Role="Operaciones" EntitySet="Operaciones" />
+      <End Role="OperacionesBalanceos" EntitySet="OperacionesBalanceos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Roles" Association="Self.FK_Usuarios_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

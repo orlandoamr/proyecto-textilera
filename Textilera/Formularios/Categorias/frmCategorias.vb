@@ -1,7 +1,7 @@
 ﻿Public Class frmCategorias
     Private editar As Boolean = False
     Private categorias As New Categorias()
-    Private db As New TextileraEntities()
+    Private db As New TextileraEntities1()
 
     Private Sub frmCategorias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgvCategorias.DataSource = obtenerCategorias(db)

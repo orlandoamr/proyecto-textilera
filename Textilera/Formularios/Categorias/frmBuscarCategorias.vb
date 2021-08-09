@@ -1,5 +1,5 @@
 ﻿Public Class frmBuscarCategorias
-    Private db As New TextileraEntities()
+    Private db As New TextileraEntities1()
     Private Sub frmBuscarCategorias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgvCategorias.DataSource = obtenerCategorias(db)
     End Sub

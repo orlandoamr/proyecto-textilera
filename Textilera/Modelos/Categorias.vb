@@ -13,8 +13,8 @@ Imports System.Collections.Generic
 Partial Public Class Categorias
     Public Property CategoriaId As Long
     Public Property NombreCategoria As String
-    Public Property EstadoCategoria As Boolean
     Public Property DescripcionCategoria As String
+    Public Property EstadoCategoria As Boolean
 
     Public Overridable Property Estilos As ICollection(Of Estilos) = New HashSet(Of Estilos)
 

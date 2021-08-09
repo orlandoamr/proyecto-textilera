@@ -17,7 +17,7 @@ Partial Public Class Operaciones
     Public Property EstadoOperacion As Boolean
 
     Public Overridable Property DetalleEstilosOperaciones As ICollection(Of DetalleEstilosOperaciones) = New HashSet(Of DetalleEstilosOperaciones)
-    Public Overridable Property OperacionesBalanceos As ICollection(Of OperacionesBalanceos) = New HashSet(Of OperacionesBalanceos)
     Public Overridable Property Maquinas As Maquinas
+    Public Overridable Property OperacionesBalanceos As ICollection(Of OperacionesBalanceos) = New HashSet(Of OperacionesBalanceos)
 
 End Class

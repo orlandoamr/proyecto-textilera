@@ -1,5 +1,5 @@
 ﻿Public Class frmMaquinas
-    Private db As New TextileraEntities()
+    Private db As New TextileraEntities1()
     Private editar As Boolean = False
     Private Sub frmMaquinas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgvMaquinas.DataSource = obtenerMaquinas(db)

@@ -12,7 +12,7 @@ Imports System.Collections.Generic
 
 Partial Public Class BalanceosEstilos
     Public Property BalanceoEstiloId As Long
-    Public Property C_UtilizacionRequeridoEquipo As String
+    Public Property UtilizacionRequeridoEquipo As String
     Public Property CantidadOperadores As Byte
     Public Property MetaDocenasHora As String
     Public Property MetaDocenaDias As String

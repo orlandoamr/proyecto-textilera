@@ -36,10 +36,9 @@ Partial Class frmBuscarEstilo
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(169, 10)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(127, 8)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(486, 23)
+        Me.Label1.Size = New System.Drawing.Size(381, 21)
         Me.Label1.TabIndex = 47
         Me.Label1.Text = "Haga doble click sobre un registro para copiarlo"
         '
@@ -58,8 +57,7 @@ Partial Class frmBuscarEstilo
         Me.dgvEstilos.ColumnHeadersHeight = 35
         Me.dgvEstilos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvEstilos.EnableHeadersVisualStyles = False
-        Me.dgvEstilos.Location = New System.Drawing.Point(13, 56)
-        Me.dgvEstilos.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvEstilos.Location = New System.Drawing.Point(10, 46)
         Me.dgvEstilos.Name = "dgvEstilos"
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
@@ -77,17 +75,19 @@ Partial Class frmBuscarEstilo
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgvEstilos.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvEstilos.RowTemplate.Height = 24
-        Me.dgvEstilos.Size = New System.Drawing.Size(774, 544)
+        Me.dgvEstilos.Size = New System.Drawing.Size(580, 442)
         Me.dgvEstilos.TabIndex = 46
         '
         'frmBuscarEstilo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(804, 623)
+        Me.ClientSize = New System.Drawing.Size(603, 506)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgvEstilos)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmBuscarEstilo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmBuscarEstilo"
         CType(Me.dgvEstilos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -5,7 +5,7 @@
       <PropertyRef Name="BalanceoEstiloId" />
     </Key>
     <Property Name="BalanceoEstiloId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="%UtilizacionRequeridoEquipo" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="UtilizacionRequeridoEquipo" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="CantidadOperadores" Type="tinyint" Nullable="false" />
     <Property Name="MetaDocenasHora" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="MetaDocenaDias" Type="nchar" MaxLength="10" Nullable="false" />
@@ -68,8 +68,8 @@
     <Property Name="TiempoEstandarMinutos" Type="float" Nullable="false" />
     <Property Name="MetaDocenasOperador" Type="float" Nullable="false" />
     <Property Name="CantidadOperadores" Type="float" Nullable="false" />
-    <Property Name="%UtilizacionOperador" Type="tinyint" Nullable="false" />
-    <Property Name="ParejaBalanceo" Type="char" MaxLength="1" />
+    <Property Name="UtilizacionOperador" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ParejaBalanceo" Type="varchar" MaxLength="50" />
     <Property Name="FKBalanceoId" Type="bigint" Nullable="false" />
     <Property Name="FKOperacionId" Type="bigint" />
   </EntityType>
@@ -200,6 +200,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="eliminarBalanceo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EstiloId" Type="bigint" Mode="In" />
+  </Function>
   <Function Name="eliminarDetalle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="EstiloId" Type="nvarchar" Mode="In" />
   </Function>

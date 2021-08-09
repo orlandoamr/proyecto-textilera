@@ -36,15 +36,20 @@ Partial Class frmHome
         Me.VerBalanceosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerarReporteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BalanceosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CrearUnBalanceoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VerBalanceosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GenerarReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MiCuentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.panelContenedor = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lbNombre = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip.SuspendLayout()
+        Me.panelContenedor.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip
@@ -52,7 +57,7 @@ Partial Class frmHome
         Me.MenuStrip.AutoSize = False
         Me.MenuStrip.BackColor = System.Drawing.Color.GhostWhite
         Me.MenuStrip.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.EstilosToolStripMenuItem, Me.BalanceosToolStripMenuItem, Me.MiCuentaToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.EstilosToolStripMenuItem, Me.MiCuentaToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(1222, 33)
@@ -168,39 +173,6 @@ Partial Class frmHome
         Me.UsuariosToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
         Me.UsuariosToolStripMenuItem1.Text = "Usuarios"
         '
-        'BalanceosToolStripMenuItem
-        '
-        Me.BalanceosToolStripMenuItem.BackColor = System.Drawing.Color.GhostWhite
-        Me.BalanceosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearUnBalanceoToolStripMenuItem, Me.VerBalanceosToolStripMenuItem, Me.GenerarReporteToolStripMenuItem})
-        Me.BalanceosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.BalanceosToolStripMenuItem.Name = "BalanceosToolStripMenuItem"
-        Me.BalanceosToolStripMenuItem.Size = New System.Drawing.Size(102, 29)
-        Me.BalanceosToolStripMenuItem.Text = "Balanceos"
-        '
-        'CrearUnBalanceoToolStripMenuItem
-        '
-        Me.CrearUnBalanceoToolStripMenuItem.BackColor = System.Drawing.Color.GhostWhite
-        Me.CrearUnBalanceoToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.CrearUnBalanceoToolStripMenuItem.Name = "CrearUnBalanceoToolStripMenuItem"
-        Me.CrearUnBalanceoToolStripMenuItem.Size = New System.Drawing.Size(228, 26)
-        Me.CrearUnBalanceoToolStripMenuItem.Text = "Crear un balanceo"
-        '
-        'VerBalanceosToolStripMenuItem
-        '
-        Me.VerBalanceosToolStripMenuItem.BackColor = System.Drawing.Color.GhostWhite
-        Me.VerBalanceosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.VerBalanceosToolStripMenuItem.Name = "VerBalanceosToolStripMenuItem"
-        Me.VerBalanceosToolStripMenuItem.Size = New System.Drawing.Size(228, 26)
-        Me.VerBalanceosToolStripMenuItem.Text = "Ver balanceos"
-        '
-        'GenerarReporteToolStripMenuItem
-        '
-        Me.GenerarReporteToolStripMenuItem.BackColor = System.Drawing.Color.GhostWhite
-        Me.GenerarReporteToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.GenerarReporteToolStripMenuItem.Name = "GenerarReporteToolStripMenuItem"
-        Me.GenerarReporteToolStripMenuItem.Size = New System.Drawing.Size(228, 26)
-        Me.GenerarReporteToolStripMenuItem.Text = "Generar reporte"
-        '
         'MiCuentaToolStripMenuItem
         '
         Me.MiCuentaToolStripMenuItem.BackColor = System.Drawing.Color.GhostWhite
@@ -224,18 +196,73 @@ Partial Class frmHome
         Me.SalirToolStripMenuItem.BackColor = System.Drawing.Color.GhostWhite
         Me.SalirToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(126, 26)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'panelContenedor
         '
         Me.panelContenedor.BackColor = System.Drawing.Color.GhostWhite
+        Me.panelContenedor.Controls.Add(Me.Panel1)
+        Me.panelContenedor.Controls.Add(Me.lbNombre)
+        Me.panelContenedor.Controls.Add(Me.PictureBox1)
+        Me.panelContenedor.Controls.Add(Me.Label2)
         Me.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelContenedor.ForeColor = System.Drawing.SystemColors.ControlLight
         Me.panelContenedor.Location = New System.Drawing.Point(0, 33)
         Me.panelContenedor.Name = "panelContenedor"
         Me.panelContenedor.Size = New System.Drawing.Size(1222, 694)
         Me.panelContenedor.TabIndex = 1
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(202, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel1.Location = New System.Drawing.Point(567, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(655, 694)
+        Me.Panel1.TabIndex = 114
+        '
+        'lbNombre
+        '
+        Me.lbNombre.AutoSize = True
+        Me.lbNombre.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lbNombre.Location = New System.Drawing.Point(156, 434)
+        Me.lbNombre.Name = "lbNombre"
+        Me.lbNombre.Size = New System.Drawing.Size(0, 38)
+        Me.lbNombre.TabIndex = 113
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.GhostWhite
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(182, 160)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(230, 44)
+        Me.Label2.TabIndex = 109
+        Me.Label2.Text = "Bienvenido!"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Textilera.My.Resources.Resources.ppp1
+        Me.PictureBox1.Location = New System.Drawing.Point(205, 225)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(168, 179)
+        Me.PictureBox1.TabIndex = 110
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Textilera.My.Resources.Resources.t
+        Me.PictureBox2.Location = New System.Drawing.Point(85, 84)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(465, 454)
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
         '
         'frmHome
         '
@@ -250,6 +277,11 @@ Partial Class frmHome
         Me.Text = "frmHome"
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
+        Me.panelContenedor.ResumeLayout(False)
+        Me.panelContenedor.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -266,14 +298,15 @@ Partial Class frmHome
     Friend WithEvents OperacionesToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents MáquinasToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents UsuariosToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents BalanceosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CrearUnBalanceoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents VerBalanceosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GenerarReporteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ControlDeEstilosToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents AsignarOperacionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BalanceosToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ControlDeBalanceosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VerBalanceosToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents GenerarReporteToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents Label2 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents lbNombre As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

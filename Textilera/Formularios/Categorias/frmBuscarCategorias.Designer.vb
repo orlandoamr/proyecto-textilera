@@ -45,8 +45,7 @@ Partial Class frmBuscarCategorias
         Me.dgvCategorias.ColumnHeadersHeight = 35
         Me.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvCategorias.EnableHeadersVisualStyles = False
-        Me.dgvCategorias.Location = New System.Drawing.Point(13, 40)
-        Me.dgvCategorias.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvCategorias.Location = New System.Drawing.Point(10, 32)
         Me.dgvCategorias.Name = "dgvCategorias"
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
@@ -64,7 +63,7 @@ Partial Class frmBuscarCategorias
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgvCategorias.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvCategorias.RowTemplate.Height = 24
-        Me.dgvCategorias.Size = New System.Drawing.Size(774, 544)
+        Me.dgvCategorias.Size = New System.Drawing.Size(580, 442)
         Me.dgvCategorias.TabIndex = 36
         '
         'Label1
@@ -73,21 +72,22 @@ Partial Class frmBuscarCategorias
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(169, 9)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(127, 7)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(486, 23)
+        Me.Label1.Size = New System.Drawing.Size(381, 21)
         Me.Label1.TabIndex = 45
         Me.Label1.Text = "Haga doble click sobre un registro para copiarlo"
         '
         'frmBuscarCategorias
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 597)
+        Me.ClientSize = New System.Drawing.Size(600, 485)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgvCategorias)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmBuscarCategorias"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmBuscarCategorias"
         CType(Me.dgvCategorias, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

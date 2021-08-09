@@ -1,5 +1,5 @@
 ﻿Public Class frmEstilos
-    Private db As New TextileraEntities()
+    Private db As New TextileraEntities1()
     Public idCategoria As Integer
     Private editar As Boolean = False
     Private Sub frmEstilos_Load(sender As Object, e As EventArgs) Handles MyBase.Load

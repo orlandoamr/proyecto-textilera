@@ -18,8 +18,8 @@ Partial Public Class Usuarios
     Public Property CorreoElectronico As String
     Public Property Usuario As String
     Public Property Contrasenia As String
-    Public Property EstadoUsuario As Boolean
     Public Property FKRolId As Nullable(Of Byte)
+    Public Property EstadoUsuario As Boolean
 
     Public Overridable Property Roles As Roles
 

@@ -1,5 +1,5 @@
 ﻿Public Class frmUsuarios
-    Private db As New TextileraEntities()
+    Private db As New TextileraEntities1()
     Private editar As Boolean = False
     Private Sub frmUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgvUsuarios.DataSource = obtenerUsuarios(db)

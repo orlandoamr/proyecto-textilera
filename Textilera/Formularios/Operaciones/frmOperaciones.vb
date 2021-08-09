@@ -1,5 +1,5 @@
 ﻿Public Class frmOperaciones
-    Private db As New TextileraEntities()
+    Private db As New TextileraEntities1()
     Private editar As Boolean = False
     Private idMaquina As Long
     Private Sub frmOperaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -15,7 +15,7 @@
     Private Sub nuevo()
         txtCodigo.Clear()
         txtNombre.Clear()
-        cmbMaquinas.SelectedIndex = -1
+        cmbMaquinas.SelectedIndex = 0
         chkEstado.Checked = False
         editar = False
     End Sub

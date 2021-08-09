@@ -12,12 +12,12 @@ Imports System.Collections.Generic
 
 Partial Public Class Estilos
     Public Property EstiloId As String
+    Public Property DescripcionEstilo As String
     Public Property FKCategoriaId As Long
     Public Property EstadoEstilo As Boolean
-    Public Property DescripcionEstilo As String
 
+    Public Overridable Property BalanceosEstilos As ICollection(Of BalanceosEstilos) = New HashSet(Of BalanceosEstilos)
     Public Overridable Property Categorias As Categorias
     Public Overridable Property DetalleEstilosOperaciones As ICollection(Of DetalleEstilosOperaciones) = New HashSet(Of DetalleEstilosOperaciones)
-    Public Overridable Property BalanceosEstilos As ICollection(Of BalanceosEstilos) = New HashSet(Of BalanceosEstilos)
 
 End Class

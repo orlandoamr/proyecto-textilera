@@ -171,6 +171,9 @@
       <End Role="Roles" EntitySet="Roles" />
       <End Role="Usuarios" EntitySet="Usuarios" />
     </AssociationSet>
+    <FunctionImport Name="eliminarBalanceo">
+      <Parameter Name="EstiloId" Mode="In" Type="Int64" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="BalanceosEstilos">
     <Key>
@@ -186,6 +189,7 @@
     <Property Name="EstadoBalanceo" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Estilos" Relationship="TextileraModel.FK_BalanceosEstilos_Estilos" FromRole="BalanceosEstilos" ToRole="Estilos" />
     <NavigationProperty Name="OperacionesBalanceos" Relationship="TextileraModel.FK_OperacionesBalanceos_BalanceosEstilos" FromRole="BalanceosEstilos" ToRole="OperacionesBalanceos" />
+    <Property Name="UtilizacionRequeridoEquipo" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="Maquinas">
     <Key>
@@ -207,11 +211,12 @@
     <Property Name="MetaDocenasOperador" Type="Double" Nullable="false" />
     <Property Name="CantidadOperadores" Type="Double" Nullable="false" />
     <Property Name="C_UtilizacionOperador" Type="Byte" Nullable="false" />
-    <Property Name="ParejaBalanceo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ParejaBalanceo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="FKBalanceoId" Type="Int64" Nullable="false" />
     <Property Name="FKOperacionId" Type="Int64" />
     <NavigationProperty Name="BalanceosEstilos" Relationship="TextileraModel.FK_OperacionesBalanceos_BalanceosEstilos" FromRole="OperacionesBalanceos" ToRole="BalanceosEstilos" />
     <NavigationProperty Name="Operaciones" Relationship="TextileraModel.FK_OperacionesBalanceos_Operaciones1" FromRole="OperacionesBalanceos" ToRole="Operaciones" />
+    <Property Name="UtilizacionOperador" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_BalanceosEstilos_Estilos">
     <End Type="TextileraModel.Estilos" Role="Estilos" Multiplicity="1" />

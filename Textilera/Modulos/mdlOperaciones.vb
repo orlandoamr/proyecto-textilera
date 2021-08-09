@@ -1,5 +1,5 @@
 ﻿Module mdlOperaciones
-    Public Function obtenerOperaciones(db As TextileraEntities)
+    Public Function obtenerOperaciones(db As TextileraEntities1)
         Dim tOp = From op In db.Operaciones
                   Join maq In db.Maquinas On maq.MaquinaId Equals op.FKMaquinaId
                   Select ID = op.OperacionId,
@@ -9,7 +9,7 @@
                           Estado = op.EstadoOperacion
         Return tOp.ToList()
     End Function
-    Public Function obtenerOperacionesHabilitadas(db As TextileraEntities)
+    Public Function obtenerOperacionesHabilitadas(db As TextileraEntities1)
         Dim tOp = From op In db.Operaciones
                   Join maq In db.Maquinas On maq.MaquinaId Equals op.FKMaquinaId
                   Where op.EstadoOperacion = True
@@ -20,7 +20,7 @@
         Return tOp.ToList()
     End Function
 
-    Public Function obtenerOperacionesEstilo(db As TextileraEntities, id As String)
+    Public Function obtenerOperacionesEstilo(db As TextileraEntities1, id As String)
         Dim dtb As New DataTable()
         dtb.Columns.Add("ID")
         dtb.Columns.Add("#")
@@ -30,6 +30,7 @@
                   Join dt In db.DetalleEstilosOperaciones On es.EstiloId Equals dt.EstiloId
                   Join op In db.Operaciones On dt.OperacionId Equals op.OperacionId
                   Where es.EstiloId = id
+                  Order By dt.NumeroOperacion
                   Select IdOperacion = op.OperacionId,
                           NumeroOperacion = dt.NumeroOperacion,
                           NombreOperacion = op.NombreOperacion,
